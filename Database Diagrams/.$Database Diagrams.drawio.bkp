@@ -1,0 +1,575 @@
+<mxfile host="Electron" pages="2">
+  <diagram name="ERD" id="-5W3ypYakmkORXNYPTk-">
+    <mxGraphModel dx="898" dy="464" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1200" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-10" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-2" style="shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-12" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-2" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-14" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-2" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-2" parent="1" style="whiteSpace=wrap;html=1;align=center;fontSize=22;fontFamily=Delius;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;labelBackgroundColor=none;fontColor=#333333;strokeWidth=1;rounded=1;" value="Category" vertex="1">
+          <mxGeometry height="100" width="210" x="824" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-18" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-3" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-19" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-3" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-79" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-3" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-78">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-3" parent="1" style="whiteSpace=wrap;html=1;align=center;fontSize=22;fontFamily=Delius;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;labelBackgroundColor=none;fontColor=#333333;strokeWidth=1;rounded=1;" value="Supplier" vertex="1">
+          <mxGeometry height="100" width="210" x="207" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-42" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-4" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-43" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-4" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-44" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-4" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-4" parent="1" style="whiteSpace=wrap;html=1;align=center;fontSize=22;fontFamily=Delius;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;labelBackgroundColor=none;fontColor=#333333;strokeWidth=1;rounded=1;" value="Product" vertex="1">
+          <mxGeometry height="100" width="210" x="258" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-5" parent="1" style="whiteSpace=wrap;html=1;align=center;fontSize=22;fontFamily=Delius;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;labelBackgroundColor=none;fontColor=#333333;strokeWidth=1;rounded=1;" value="Purchase" vertex="1">
+          <mxGeometry height="100" width="210" x="786" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-95" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-7" style="edgeStyle=none;shape=link;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-94">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="732" y="594" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-7" parent="1" style="whiteSpace=wrap;html=1;align=center;fontSize=22;fontFamily=Delius;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;labelBackgroundColor=none;fontColor=#333333;strokeWidth=1;rounded=1;" value="Sale" vertex="1">
+          <mxGeometry height="100" width="210" x="835" y="544" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-48" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-5" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="828.5" y="940" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-49" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-5" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="881" y="940" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-9" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;fontSize=22;fontFamily=Delius;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;labelBackgroundColor=none;fontColor=#333333;strokeWidth=1;rounded=1;" value="ID" vertex="1">
+          <mxGeometry height="70" width="150" x="693" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-11" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Name" vertex="1">
+          <mxGeometry height="70" width="150" x="853" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-13" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Description" vertex="1">
+          <mxGeometry height="70" width="150" x="1013" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-15" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;fontSize=22;fontFamily=Delius;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;labelBackgroundColor=none;fontColor=#333333;strokeWidth=1;rounded=1;" value="ID" vertex="1">
+          <mxGeometry height="70" width="150" x="57" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-16" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Name" vertex="1">
+          <mxGeometry height="70" width="150" x="235" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-22" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-17" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-17" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="ContactName" vertex="1">
+          <mxGeometry height="70" width="150" x="397" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-24" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-23" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-23" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Phone" vertex="1">
+          <mxGeometry height="70" width="150" x="7" y="964" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-28" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-25" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-25" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Email" vertex="1">
+          <mxGeometry height="70" width="150" x="57" y="1078" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-30" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-29" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-29" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Adress" vertex="1">
+          <mxGeometry height="70" width="150" x="237" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-39" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-31" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-31" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;fontSize=22;fontFamily=Delius;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;labelBackgroundColor=none;fontColor=#333333;strokeWidth=1;rounded=1;" value="ID" vertex="1">
+          <mxGeometry height="70" width="150" x="158" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-40" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-32" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-32" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="SKU" vertex="1">
+          <mxGeometry height="70" width="150" x="288" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-33" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Name" vertex="1">
+          <mxGeometry height="70" width="150" x="78" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-36" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="UnitPrice" vertex="1">
+          <mxGeometry height="70" width="150" x="453" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-45" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-37" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-37" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="StockQuantity" vertex="1">
+          <mxGeometry height="70" width="150" x="218" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-38" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="LowStockTheshold" vertex="1">
+          <mxGeometry height="100" width="220" x="23" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-46" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;fontSize=22;fontFamily=Delius;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;labelBackgroundColor=none;fontColor=#333333;strokeWidth=1;rounded=1;" value="ID" vertex="1">
+          <mxGeometry height="70" width="150" x="987" y="1070" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-47" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Date" vertex="1">
+          <mxGeometry height="70" width="150" x="816" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-51" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-50" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;entryX=0;entryY=1;entryDx=0;entryDy=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="933.5" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-50" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;dashed=1;dashPattern=12 12;" value="TotalAmount" vertex="1">
+          <mxGeometry height="70" width="150" x="636" y="1060" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-61" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-59" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-59" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;fontSize=22;fontFamily=Delius;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;labelBackgroundColor=none;fontColor=#333333;strokeWidth=1;rounded=1;" value="ID" vertex="1">
+          <mxGeometry height="70" width="150" x="1012" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-63" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-62" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-62" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Date" vertex="1">
+          <mxGeometry height="70" width="150" x="712" y="649" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-65" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-64" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-64" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;dashed=1;dashPattern=12 12;" value="TotalAmount" vertex="1">
+          <mxGeometry height="70" width="150" x="865" y="677" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-67" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-66" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-66" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="CustomerInfo" vertex="1">
+          <mxGeometry height="70" width="150" x="1013" y="648" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-74" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-72" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-72" parent="1" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Has" vertex="1">
+          <mxGeometry height="100" width="150" x="563" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-76" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontFamily=Delius;fontSize=16;fontColor=default;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="1" vertex="1">
+          <mxGeometry height="30" width="60" x="692" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-78" parent="1" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Has" vertex="1">
+          <mxGeometry height="100" width="150" x="537" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-80" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontFamily=Delius;fontSize=19;fontColor=default;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="1" vertex="1">
+          <mxGeometry height="30" width="60" x="491" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-83" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-78" style="shape=link;html=1;rounded=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="477" y="1150" as="sourcePoint" />
+            <mxPoint x="786" y="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-84" connectable="0" parent="NZhEh64hmUcEgqFKuXBx-83" style="resizable=0;html=1;whiteSpace=wrap;align=right;verticalAlign=bottom;fontFamily=Delius;fontSize=21;fontColor=default;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;rounded=1;" value="N" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="-73" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-85" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-72" style="shape=link;html=1;rounded=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-4" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="683" y="220" as="sourcePoint" />
+            <mxPoint x="843" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-86" connectable="0" parent="NZhEh64hmUcEgqFKuXBx-85" style="resizable=0;html=1;whiteSpace=wrap;align=right;verticalAlign=bottom;fontFamily=Delius;fontSize=20;fontColor=default;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;rounded=1;" value="N" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="92" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-102" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-87" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-100">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-104" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-87" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-87" parent="1" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Purchase Items" vertex="1">
+          <mxGeometry height="125" width="168" x="425" y="524" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-90" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-87" style="shape=link;html=1;rounded=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-5" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="509" y="770" />
+              <mxPoint x="786" y="770" />
+            </Array>
+            <mxPoint x="697" y="1010" as="sourcePoint" />
+            <mxPoint x="796" y="1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-91" connectable="0" parent="NZhEh64hmUcEgqFKuXBx-90" style="resizable=0;html=1;whiteSpace=wrap;align=right;verticalAlign=bottom;fontFamily=Delius;fontSize=21;fontColor=default;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;rounded=1;" value="N" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="-249" y="-280" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-96" connectable="0" parent="NZhEh64hmUcEgqFKuXBx-90" style="resizable=0;html=1;whiteSpace=wrap;align=right;verticalAlign=bottom;fontFamily=Delius;fontSize=21;fontColor=default;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;rounded=1;" value="N" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="-29" y="-456" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-92" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-4" style="shape=link;html=1;rounded=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-87" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="656" y="714" as="sourcePoint" />
+            <mxPoint x="755" y="714" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-93" connectable="0" parent="NZhEh64hmUcEgqFKuXBx-92" style="resizable=0;html=1;whiteSpace=wrap;align=right;verticalAlign=bottom;fontFamily=Delius;fontSize=21;fontColor=default;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;rounded=1;" value="M" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="24" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-98" connectable="0" parent="NZhEh64hmUcEgqFKuXBx-92" style="resizable=0;html=1;whiteSpace=wrap;align=right;verticalAlign=bottom;fontFamily=Delius;fontSize=21;fontColor=default;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;rounded=1;" value="M" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="180" y="-165" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-107" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-94" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-105">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-108" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-94" style="edgeStyle=none;shape=connector;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-106">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-94" parent="1" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Sales Items" vertex="1">
+          <mxGeometry height="125" width="168" x="648" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-97" edge="1" parent="1" source="NZhEh64hmUcEgqFKuXBx-94" style="edgeStyle=none;shape=link;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Delius;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" target="NZhEh64hmUcEgqFKuXBx-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="527" y="400" />
+              <mxPoint x="527" y="245" />
+            </Array>
+            <mxPoint x="660" y="359" as="sourcePoint" />
+            <mxPoint x="557" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-100" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Quantity" vertex="1">
+          <mxGeometry height="70" width="150" x="267" y="474" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-103" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="UnitCost" vertex="1">
+          <mxGeometry height="70" width="150" x="267" y="638" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-105" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="Quantity" vertex="1">
+          <mxGeometry height="70" width="150" x="854" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="NZhEh64hmUcEgqFKuXBx-106" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;fontFamily=Delius;fontSize=22;labelBackgroundColor=none;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;fillColor=#f5f5f5;strokeColor=#010203;fontColor=#333333;strokeWidth=1;rounded=1;" value="UnitCost" vertex="1">
+          <mxGeometry height="70" width="150" x="853" y="432" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="-2wrzwb2BFoFd7pqac4B" name="Schema">
+    <mxGraphModel dx="974" dy="1069" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-2" parent="1" style="shape=table;startSize=40;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Product" vertex="1">
+          <mxGeometry height="80" width="680" x="120" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-3" parent="pdGno-CJ5sO7fLBabbYp-2" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="" vertex="1">
+          <mxGeometry height="40" width="680" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-4" parent="pdGno-CJ5sO7fLBabbYp-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="&lt;u&gt;ID&lt;/u&gt;" vertex="1">
+          <mxGeometry height="40" width="69" as="geometry">
+            <mxRectangle height="40" width="69" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-5" parent="pdGno-CJ5sO7fLBabbYp-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="SKU" vertex="1">
+          <mxGeometry height="40" width="68" x="69" as="geometry">
+            <mxRectangle height="40" width="68" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-6" parent="pdGno-CJ5sO7fLBabbYp-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Name" vertex="1">
+          <mxGeometry height="40" width="69" x="137" as="geometry">
+            <mxRectangle height="40" width="69" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-7" parent="pdGno-CJ5sO7fLBabbYp-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="UnitPrice" vertex="1">
+          <mxGeometry height="40" width="84" x="206" as="geometry">
+            <mxRectangle height="40" width="84" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-8" parent="pdGno-CJ5sO7fLBabbYp-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="LowStockTheshold" vertex="1">
+          <mxGeometry height="40" width="160" x="290" as="geometry">
+            <mxRectangle height="40" width="160" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-9" parent="pdGno-CJ5sO7fLBabbYp-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="StockQuantity" vertex="1">
+          <mxGeometry height="40" width="130" x="450" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-10" parent="pdGno-CJ5sO7fLBabbYp-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="CategoryID" vertex="1">
+          <mxGeometry height="40" width="100" x="580" as="geometry">
+            <mxRectangle height="40" width="100" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-11" parent="1" style="shape=table;startSize=40;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Category" vertex="1">
+          <mxGeometry height="80" width="240" x="120" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-12" parent="pdGno-CJ5sO7fLBabbYp-11" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="" vertex="1">
+          <mxGeometry height="40" width="240" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-13" parent="pdGno-CJ5sO7fLBabbYp-12" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="&lt;u&gt;ID&lt;/u&gt;" vertex="1">
+          <mxGeometry height="40" width="69" as="geometry">
+            <mxRectangle height="40" width="69" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-14" parent="pdGno-CJ5sO7fLBabbYp-12" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Name" vertex="1">
+          <mxGeometry height="40" width="68" x="69" as="geometry">
+            <mxRectangle height="40" width="68" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pdGno-CJ5sO7fLBabbYp-15" parent="pdGno-CJ5sO7fLBabbYp-12" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Description" vertex="1">
+          <mxGeometry height="40" width="103" x="137" as="geometry">
+            <mxRectangle height="40" width="103" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zs_9ji2Pf8m49Q-7GWoY-2" parent="1" style="shape=table;startSize=40;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Sale" vertex="1">
+          <mxGeometry height="80" width="400" x="120" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="zs_9ji2Pf8m49Q-7GWoY-3" parent="zs_9ji2Pf8m49Q-7GWoY-2" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="" vertex="1">
+          <mxGeometry height="40" width="400" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zs_9ji2Pf8m49Q-7GWoY-4" parent="zs_9ji2Pf8m49Q-7GWoY-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="&lt;u&gt;ID&lt;/u&gt;" vertex="1">
+          <mxGeometry height="40" width="69" as="geometry">
+            <mxRectangle height="40" width="69" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zs_9ji2Pf8m49Q-7GWoY-5" parent="zs_9ji2Pf8m49Q-7GWoY-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="TotalAmount" vertex="1">
+          <mxGeometry height="40" width="111" x="69" as="geometry">
+            <mxRectangle height="40" width="111" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zs_9ji2Pf8m49Q-7GWoY-6" parent="zs_9ji2Pf8m49Q-7GWoY-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Date" vertex="1">
+          <mxGeometry height="40" width="90" x="180" as="geometry">
+            <mxRectangle height="40" width="90" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-9" parent="zs_9ji2Pf8m49Q-7GWoY-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="CustomerInfo" vertex="1">
+          <mxGeometry height="40" width="130" x="270" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-10" parent="1" style="shape=table;startSize=40;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Sale Item" vertex="1">
+          <mxGeometry height="80" width="530.0000000000003" x="120" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-11" parent="oJPP8fyxDzcq03itGA-t-10" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="" vertex="1">
+          <mxGeometry height="40" width="530.0000000000003" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-12" parent="oJPP8fyxDzcq03itGA-t-11" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="&lt;u&gt;ID&lt;/u&gt;" vertex="1">
+          <mxGeometry height="40" width="69" as="geometry">
+            <mxRectangle height="40" width="69" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-13" parent="oJPP8fyxDzcq03itGA-t-11" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="SaleID" vertex="1">
+          <mxGeometry height="40" width="91" x="69" as="geometry">
+            <mxRectangle height="40" width="91" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-14" parent="oJPP8fyxDzcq03itGA-t-11" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="ProductID" vertex="1">
+          <mxGeometry height="40" width="110" x="160" as="geometry">
+            <mxRectangle height="40" width="110" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-17" parent="oJPP8fyxDzcq03itGA-t-11" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="UnitCost" vertex="1">
+          <mxGeometry height="40" width="130" x="270" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-15" parent="oJPP8fyxDzcq03itGA-t-11" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Quantity" vertex="1">
+          <mxGeometry height="40" width="130" x="400" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-16" edge="1" parent="1" source="pdGno-CJ5sO7fLBabbYp-3" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;endFill=1;startArrow=none;startFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="pdGno-CJ5sO7fLBabbYp-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="809.03" y="260.03" />
+              <mxPoint x="809.03" y="160.03" />
+              <mxPoint x="100" y="160.03" />
+              <mxPoint x="100" y="100.03" />
+            </Array>
+            <mxPoint x="700" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-20" edge="1" parent="1" source="oJPP8fyxDzcq03itGA-t-11" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.216;exitY=0.999;exitDx=0;exitDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;endFill=1;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="zs_9ji2Pf8m49Q-7GWoY-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="234.5" y="480" />
+              <mxPoint x="100" y="480" />
+              <mxPoint x="100" y="580" />
+            </Array>
+            <mxPoint x="260" y="495" as="sourcePoint" />
+            <mxPoint x="230" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-21" edge="1" parent="1" source="oJPP8fyxDzcq03itGA-t-11" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.396;exitY=1.011;exitDx=0;exitDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;endFill=1;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="pdGno-CJ5sO7fLBabbYp-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="329.9" y="480" />
+              <mxPoint x="680" y="480" />
+              <mxPoint x="680" y="340" />
+              <mxPoint x="100" y="340" />
+              <mxPoint x="100" y="260" />
+            </Array>
+            <mxPoint x="244" y="450" as="sourcePoint" />
+            <mxPoint x="130" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-22" parent="1" style="shape=table;startSize=40;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Purchase" vertex="1">
+          <mxGeometry height="80" width="370" x="120" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-23" parent="oJPP8fyxDzcq03itGA-t-22" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="" vertex="1">
+          <mxGeometry height="40" width="370" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-24" parent="oJPP8fyxDzcq03itGA-t-23" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="&lt;u&gt;ID&lt;/u&gt;" vertex="1">
+          <mxGeometry height="40" width="69" as="geometry">
+            <mxRectangle height="40" width="69" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-25" parent="oJPP8fyxDzcq03itGA-t-23" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="TotalAmount" vertex="1">
+          <mxGeometry height="40" width="111" x="69" as="geometry">
+            <mxRectangle height="40" width="111" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-26" parent="oJPP8fyxDzcq03itGA-t-23" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Date" vertex="1">
+          <mxGeometry height="40" width="90" x="180" as="geometry">
+            <mxRectangle height="40" width="90" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-53" parent="oJPP8fyxDzcq03itGA-t-23" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="SupplierID" vertex="1">
+          <mxGeometry height="40" width="100" x="270" as="geometry">
+            <mxRectangle height="40" width="100" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-33" parent="1" style="shape=table;startSize=40;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Purchase Item" vertex="1">
+          <mxGeometry height="80" width="550.0000000000003" x="120" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-34" parent="oJPP8fyxDzcq03itGA-t-33" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="" vertex="1">
+          <mxGeometry height="40" width="550.0000000000003" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-35" parent="oJPP8fyxDzcq03itGA-t-34" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="&lt;u&gt;ID&lt;/u&gt;" vertex="1">
+          <mxGeometry height="40" width="69" as="geometry">
+            <mxRectangle height="40" width="69" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-36" parent="oJPP8fyxDzcq03itGA-t-34" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="PurchaseID" vertex="1">
+          <mxGeometry height="40" width="111" x="69" as="geometry">
+            <mxRectangle height="40" width="111" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-37" parent="oJPP8fyxDzcq03itGA-t-34" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="ProductID" vertex="1">
+          <mxGeometry height="40" width="110" x="180" as="geometry">
+            <mxRectangle height="40" width="110" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-38" parent="oJPP8fyxDzcq03itGA-t-34" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="UnitCost" vertex="1">
+          <mxGeometry height="40" width="130" x="290" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-39" parent="oJPP8fyxDzcq03itGA-t-34" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Quantity" vertex="1">
+          <mxGeometry height="40" width="130" x="420" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-40" edge="1" parent="1" source="oJPP8fyxDzcq03itGA-t-34" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.254;exitY=0.992;exitDx=0;exitDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;endFill=1;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="oJPP8fyxDzcq03itGA-t-23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="259.7" y="800" />
+              <mxPoint x="100" y="800" />
+              <mxPoint x="100" y="900" />
+            </Array>
+            <mxPoint x="260" y="760" as="sourcePoint" />
+            <mxPoint x="50" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-41" edge="1" parent="1" source="oJPP8fyxDzcq03itGA-t-34" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.435;exitY=0.986;exitDx=0;exitDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;endFill=1;exitPerimeter=0;entryX=0.062;entryY=1.006;entryDx=0;entryDy=0;entryPerimeter=0;" target="pdGno-CJ5sO7fLBabbYp-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="359.28" y="800.03" />
+              <mxPoint x="720.03" y="800.03" />
+              <mxPoint x="720.03" y="309.97" />
+              <mxPoint x="161.48" y="309.97" />
+            </Array>
+            <mxPoint x="360" y="760" as="sourcePoint" />
+            <mxPoint x="220" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-43" parent="1" style="shape=table;startSize=40;container=1;collapsible=0;childLayout=tableLayout;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Supplier" vertex="1">
+          <mxGeometry height="80" width="600" x="120" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-44" parent="oJPP8fyxDzcq03itGA-t-43" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fixedHeader=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="" vertex="1">
+          <mxGeometry height="40" width="600" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-45" parent="oJPP8fyxDzcq03itGA-t-44" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="&lt;u&gt;ID&lt;/u&gt;" vertex="1">
+          <mxGeometry height="40" width="69" as="geometry">
+            <mxRectangle height="40" width="69" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-46" parent="oJPP8fyxDzcq03itGA-t-44" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Name" vertex="1">
+          <mxGeometry height="40" width="68" x="69" as="geometry">
+            <mxRectangle height="40" width="68" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-47" parent="oJPP8fyxDzcq03itGA-t-44" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Phone" vertex="1">
+          <mxGeometry height="40" width="69" x="137" as="geometry">
+            <mxRectangle height="40" width="69" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-48" parent="oJPP8fyxDzcq03itGA-t-44" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Email" vertex="1">
+          <mxGeometry height="40" width="94" x="206" as="geometry">
+            <mxRectangle height="40" width="94" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-49" parent="oJPP8fyxDzcq03itGA-t-44" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="ContactName" vertex="1">
+          <mxGeometry height="40" width="170" x="300" as="geometry">
+            <mxRectangle height="40" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-50" parent="oJPP8fyxDzcq03itGA-t-44" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontFamily=Delius;fontSize=18;fontColor=default;labelBackgroundColor=default;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DDelius;" value="Address" vertex="1">
+          <mxGeometry height="40" width="130" x="470" as="geometry">
+            <mxRectangle height="40" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oJPP8fyxDzcq03itGA-t-52" edge="1" parent="1" source="oJPP8fyxDzcq03itGA-t-23" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.864;exitY=0.995;exitDx=0;exitDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;endFill=1;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="oJPP8fyxDzcq03itGA-t-44">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="439.71" y="960.03" />
+              <mxPoint x="90" y="960.03" />
+              <mxPoint x="90" y="1060.03" />
+            </Array>
+            <mxPoint x="475" y="940" as="sourcePoint" />
+            <mxPoint x="335" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
