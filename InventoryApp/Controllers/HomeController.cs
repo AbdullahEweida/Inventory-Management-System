@@ -21,5 +21,15 @@ namespace InventoryApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        [Route("/Home/Error")]
+        public IActionResult Error(int? statusCode = null)
+        {
+            if (statusCode.HasValue && statusCode.Value == 404)
+            {
+                return View("NotFound");
+            }
+
+            return View("Error");
+        }
     }
 }

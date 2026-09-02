@@ -16,7 +16,7 @@ namespace InventoryApp.Models
         [Phone(ErrorMessage = "Invalid phone number")]
         [MaxLength(50, ErrorMessage = "Phone number must be less than 50 characters")]
         public string Phone { get; set; }
-        [EmailAddress(ErrorMessage = "Invalid email address")]
+        [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "Invalid email format. Example: name@example.com")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Contact name is required")]
         [MaxLength(50, ErrorMessage = "Contact name must be less than 50 characters")]
