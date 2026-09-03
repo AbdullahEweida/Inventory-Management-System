@@ -1,0 +1,155 @@
+﻿@model IEnumerable<InventoryApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Real-Time Stock Tracking";
+    
+    int lowStockCount = Model != null ? Model.Count(p => p.StockQuantity <= p.LowStockThreshold) : 0;
+}
+
+<div class="container-fluid mt-4">
+    
+    <div class="row mb-4 align-items-center">
+        <div class="col-lg-6 mb-3 mb-lg-0">
+            <h2 class="fw-bolder mb-1">
+                <i class="bi bi-activity text-primary me-2"></i> Live Inventory Board
+            </h2>
+            <p class="text-muted mb-0 fs-6">Monitor stock levels, thresholds, and overall inventory health in real-time.</p>
+        </div>
+        
+        <div class="col-lg-6 d-flex flex-column flex-sm-row justify-content-lg-end gap-3 align-items-sm-center">
+            
+            <div class="position-relative" style="min-width: 250px;">
+                <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                <input type="text" id="searchInput" class="form-control rounded-pill ps-5 border-0 shadow-sm" placeholder="Search by SKU or Name..." aria-label="Search products" onkeyup="filterTable()">
+            </div>
+
+            <a asp-action="LowStockAlerts" class="btn btn-warning rounded-pill shadow-sm px-4 fw-bold position-relative d-flex align-items-center justify-content-center" aria-label="View low stock alerts">
+                <i class="bi bi-bell-fill me-2"></i> Low Stock Alerts
+                @if (lowStockCount > 0)
+                {
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-2 border-white pulse-danger">
+                        @lowStockCount
+                        <span class="visually-hidden">critical alerts</span>
+                    </span>
+                }
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+        <div class="table-responsive">
+            <table class="table table-hover table-borderless align-middle text-nowrap mb-0" id="stockTable">
+                <thead class="table-light border-bottom">
+                    <tr>
+                        <th class="ps-4 py-3 text-secondary">SKU</th>
+                        <th class="py-3 text-secondary">Product Info</th>
+                        <th class="text-center py-3 text-secondary">Current Stock</th>
+                        <th class="text-center py-3 text-secondary">Threshold</th>
+                        <th class="pe-4 py-3 text-secondary" style="min-width: 200px;">Health Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            var healthPercentage = 100;
+                            var barColor = "bg-success";
+                            var statusText = "Healthy";
+                            
+                            if (item.StockQuantity <= item.LowStockThreshold)
+                            {
+                                healthPercentage = (item.StockQuantity > 0) ? (item.StockQuantity * 100) / item.LowStockThreshold : 5;
+                                barColor = "bg-danger progress-bar-striped progress-bar-animated";
+                                statusText = "Critical";
+                            }
+                            else if (item.StockQuantity <= item.LowStockThreshold * 1.5)
+                            {
+                                healthPercentage = 75;
+                                barColor = "bg-warning";
+                                statusText = "Warning";
+                            }
+
+                            <tr class="border-bottom">
+                                <td class="ps-4 text-muted fw-semibold">
+                                    <span class="bg-light px-2 py-1 rounded border">@item.SKU</span>
+                                </td>
+                                <td>
+                                    <div class="fw-bold text-dark fs-6">@item.Name</div>
+                                </td>
+                                <td class="text-center">
+                                    <span class="fs-5 fw-bolder @(item.StockQuantity <= item.LowStockThreshold ? "text-danger" : "text-success")">
+                                        @item.StockQuantity
+                                    </span>
+                                </td>
+                                <td class="text-center text-muted">@item.LowStockThreshold</td>
+                                <td class="pe-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <small class="fw-bold text-muted">@statusText</small>
+                                        <small class="text-muted">@(item.StockQuantity <= item.LowStockThreshold ? "Restock!" : "")</small>
+                                    </div>
+                                    <!-- WAI-ARIA roles added for semantic accessibility -->
+                                    <div class="progress" style="height: 8px;" role="progressbar" aria-label="Stock health for @item.Name" aria-valuenow="@item.StockQuantity" aria-valuemin="0" aria-valuemax="@(item.LowStockThreshold * 2)">
+                                        <div class="progress-bar @barColor rounded-pill" style="width: @healthPercentage%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center py-5 text-muted">
+                                <i class="bi bi-inbox fs-2 d-block mb-2"></i>
+                                No products found in the inventory.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .pulse-danger {
+        animation: pulse-red 2s infinite;
+    }
+    @@keyframes pulse-red {
+        0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+        70% { box-shadow: 0 0 0 6px rgba(220, 53, 69, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+    }
+    
+    #stockTable tbody tr:hover {
+        background-color: #f8f9fa !important;
+        transition: background-color 0.2s ease-in-out;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        function filterTable() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById("stockTable");
+            const tr = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < tr.length; i++) {
+                const tdSKU = tr[i].getElementsByTagName("td")[0];
+                const tdName = tr[i].getElementsByTagName("td")[1];
+                
+                if (tdSKU || tdName) {
+                    const txtValueSKU = tdSKU.textContent || tdSKU.innerText;
+                    const txtValueName = tdName.textContent || tdName.innerText;
+                    
+                    if (txtValueSKU.toUpperCase().indexOf(filter) > -1 || txtValueName.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }       
+            }
+        }
+    </script>
+}
