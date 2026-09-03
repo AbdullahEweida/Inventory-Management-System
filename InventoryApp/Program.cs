@@ -1,7 +1,11 @@
 using InventoryApp.DataAccess;
+using InventoryApp.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//adding ai services
+builder.Services.AddHttpClient<IAIService, AIService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
