@@ -26,6 +26,8 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+
+                        
                     </ul>
                 </div>
             </div>
@@ -42,9 +44,13 @@
             &copy; 2026 - InventoryApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- 1. jQuery الأساسية -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- 2. Bootstrap JS -->
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- 3. مكان رندر السكربتات الفرعية للصفحات -->
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

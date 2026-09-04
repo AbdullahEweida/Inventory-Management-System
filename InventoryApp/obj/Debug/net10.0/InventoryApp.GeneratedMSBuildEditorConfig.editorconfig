@@ -20,41 +20,73 @@ build_property.TargetFrameworkVersion = v10.0
 build_property.EntryPointFilePath = 
 build_property.RootNamespace = InventoryApp
 build_property.RootNamespace = InventoryApp
-build_property.ProjectDir = E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\
+build_property.ProjectDir = C:\Users\XPRISTO\Desktop\PRO\Inventory-Management-System\InventoryApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp
+build_property.MSBuildProjectDirectory = C:\Users\XPRISTO\Desktop\PRO\Inventory-Management-System\InventoryApp
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[E:/ITI_Full Stack Web .Net/ITI-GraduationProject/Inventory-Management-System/InventoryApp/Views/Home/Index.cshtml]
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Categories/AddCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xBZGRDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Categories/CategoryIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDYXRlZ29yeUluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Categories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI_Full Stack Web .Net/ITI-GraduationProject/Inventory-Management-System/InventoryApp/Views/Home/Privacy.cshtml]
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI_Full Stack Web .Net/ITI-GraduationProject/Inventory-Management-System/InventoryApp/Views/Shared/Error.cshtml]
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Products/AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQWRkUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Products/EditProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdFByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Products/ProductDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUHJvZHVjdERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Products/ProductIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcUHJvZHVjdEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI_Full Stack Web .Net/ITI-GraduationProject/Inventory-Management-System/InventoryApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI_Full Stack Web .Net/ITI-GraduationProject/Inventory-Management-System/InventoryApp/Views/_ViewImports.cshtml]
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI_Full Stack Web .Net/ITI-GraduationProject/Inventory-Management-System/InventoryApp/Views/_ViewStart.cshtml]
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/ITI_Full Stack Web .Net/ITI-GraduationProject/Inventory-Management-System/InventoryApp/Views/Shared/_Layout.cshtml]
+[C:/Users/XPRISTO/Desktop/PRO/Inventory-Management-System/InventoryApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4hgdbmy3np

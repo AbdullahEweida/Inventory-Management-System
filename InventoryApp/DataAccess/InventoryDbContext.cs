@@ -7,12 +7,12 @@ namespace InventoryApp.DataAccess
     {
         public InventoryDbContext(DbContextOptions<InventoryDbContext> options) : base(options) { }
 
-        DbSet<Product> Products { get; set; }
-        DbSet<Category> Categories { get; set; }
-        DbSet<Supplier> Suppliers { get; set; }
-        DbSet<Purchase> Purchases { get; set; }
-        DbSet<Sale> Sales { get; set; }
-        DbSet<Sale_Item> Sales_Items { get; set;}
-        DbSet<Purchase_Item> Purchases_Items { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<Sale_Item> Sales_Items { get; set;}
+        public DbSet<Purchase_Item> Purchases_Items { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace InventoryApp.Models
         [Range(1, int.MaxValue, ErrorMessage = "Stock quantity must be greater than 0")]
         public int StockQuantity { get; set; }
         // foreign key
-        public Guid CategoryID { get; set; }
+        public Guid? CategoryID { get; set; }
 
         // navigation properties
         public Category? Category { get; set; }

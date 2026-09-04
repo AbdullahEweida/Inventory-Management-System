@@ -1,0 +1,49 @@
+﻿@model InventoryApp.ViewModels.Products.ProductDetailsViewModel
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="container mt-4" style="max-width: 700px;">
+    <div class="card shadow">
+        <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">Product Details</h3>
+            <a asp-action="Index" class="btn btn-light btn-sm">Back to List</a>
+        </div>
+        <div class="card-body">
+            <dl class="row fs-5">
+                <dt class="col-sm-4 text-muted">Product Name:</dt>
+                <dd class="col-sm-8 fw-bold">@Model.Name</dd>
+
+                <dt class="col-sm-4 text-muted">SKU:</dt>
+                <dd class="col-sm-8">@(string.IsNullOrEmpty(Model.SKU) ? "N/A" : Model.SKU)</dd>
+
+                <dt class="col-sm-4 text-muted">Category:</dt>
+                <dd class="col-sm-8">@(string.IsNullOrEmpty(Model.CategoryName) ? "Uncategorized" : Model.CategoryName)</dd>
+
+                <dt class="col-sm-4 text-muted">Unit Price:</dt>
+                <dd class="col-sm-8 text-success fw-bold">@Model.UnitPrice.ToString("C")</dd>
+
+                <dt class="col-sm-4 text-muted">Stock Quantity:</dt>
+                <dd class="col-sm-8">
+                    @Model.StockQuantity
+                    @if (Model.IsLowStock)
+                    {
+                        <span class="badge bg-danger ms-2 fs-6">Low Stock Alert!</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success ms-2 fs-6">Sufficient Stock</span>
+                    }
+                </dd>
+
+                <dt class="col-sm-4 text-muted">Low Stock Alert Level:</dt>
+                <dd class="col-sm-8">@Model.LowStockThreshold</dd>
+            </dl>
+        </div>
+        <div class="card-footer text-end">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit Product</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
