@@ -1,0 +1,238 @@
+﻿@model InventoryApp.Models.Sale
+
+@{
+    ViewData["Title"] = "Sale Details";
+}
+
+<div class="container mt-5">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2>Sale Details</h2>
+
+            <p class="text-muted mb-0">
+                Invoice #@Model.ID.ToString().Substring(0, 8)
+            </p>
+        </div>
+
+        <a asp-action="Index"
+           class="btn btn-outline-secondary">
+            ← Back to Sales History
+        </a>
+
+    </div>
+
+
+    <!-- Sale Information -->
+    <div class="card shadow-sm border-0 mb-4">
+
+        <div class="card-header bg-primary text-white">
+
+            <h5 class="mb-0">
+                Sale Information
+            </h5>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <strong>Invoice Number</strong>
+
+                    <p class="text-muted">
+                        @Model.ID.ToString().Substring(0, 8)
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <strong>Customer</strong>
+
+                    <p class="text-muted">
+                        @(Model.CustomerInfo ?? "Unknown Customer")
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <strong>Sale Date</strong>
+
+                    <p class="text-muted">
+                        @Model.Date.ToString("dd MMM yyyy HH:mm")
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Sale Items -->
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-dark text-white">
+
+            <h5 class="mb-0">
+                Sold Products
+            </h5>
+
+        </div>
+
+
+        <div class="card-body p-0">
+
+            @if (Model.Sale_Items != null && Model.Sale_Items.Any())
+            {
+                <div class="table-responsive">
+
+                    <table class="table table-bordered table-hover align-middle mb-0">
+
+                        <thead class="table-dark">
+
+                            <tr>
+
+                                <th>#</th>
+
+                                <th>Product</th>
+
+                                <th class="text-center">
+                                    Quantity
+                                </th>
+
+                                <th class="text-end">
+                                    Unit Price
+                                </th>
+
+                                <th class="text-end">
+                                    Subtotal
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            @{
+                                int counter = 1;
+                            }
+
+
+                            @foreach (var item in Model.Sale_Items)
+                            {
+                                decimal subtotal =
+                                item.Quantity * item.UnitCost;
+
+                                <tr>
+
+                                    <td>
+                                        @counter
+                                    </td>
+
+
+                                    <td class="fw-bold">
+
+                                        @(item.Product?.Name
+                                                                        ?? "Unknown Product")
+
+                            </td>
+
+
+                                    <td class="text-center">
+
+                                        @item.Quantity
+
+                                    </td>
+
+
+                                    <td class="text-end">
+
+                                        @item.UnitCost.ToString("C")
+
+                                    </td>
+
+
+                                    <td class="text-end fw-bold">
+
+                                        @subtotal.ToString("C")
+
+                                    </td>
+
+                                </tr>
+
+                                                counter++;
+                            }
+
+                        </tbody>
+
+
+                        <tfoot>
+
+                            <tr class="table-light">
+
+                                <td colspan="4"
+                                    class="text-end fw-bold">
+
+                                    Total Sale:
+
+                                </td>
+
+
+                                <td class="text-end fw-bold fs-5">
+
+                                    @Model.TotalAmount.ToString("C")
+
+                                </td>
+
+                            </tr>
+
+                        </tfoot>
+
+                    </table>
+
+                </div>
+            }
+            else
+            {
+                <div class="text-center p-5">
+
+                    <p class="text-muted mb-0">
+
+                        No products found in this sale.
+
+                    </p>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Buttons -->
+    <div class="mt-4">
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+
+            Back to Sales History
+
+        </a>
+
+    </div>
+
+</div>
