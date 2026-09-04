@@ -1,0 +1,331 @@
+﻿@model InventoryApp.ViewModels.PurchaseCreateViewModel
+
+@{
+    ViewData["Title"] = "Create Purchase";
+    var suppliers = ViewBag.Suppliers as List<InventoryApp.Models.Supplier>;
+    var products = ViewBag.Products as List<InventoryApp.Models.Product>;
+}
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2>Create Purchase</h2>
+            <p class="text-muted">Create a new purchase transaction</p>
+        </div>
+
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            Back to History
+        </a>
+    </div>
+
+    <form asp-action="Create" method="post">
+
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <!-- Supplier and Date -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Purchase Information</h5>
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="SupplierID" class="form-label">
+                            Supplier
+                        </label>
+
+                        <select asp-for="SupplierID" class="form-select">
+                            <option value="">-- Select Supplier --</option>
+
+                            @if (suppliers != null)
+                            {
+                                foreach (var supplier in suppliers)
+                                {
+                                    <option value="@supplier.ID">
+                                        @supplier.Name
+                                    </option>
+                                }
+                            }
+                        </select>
+
+                        <span asp-validation-for="SupplierID"
+                              class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Date" class="form-label">
+                            Purchase Date
+                        </label>
+
+                        <input asp-for="Date"
+                               type="datetime-local"
+                               class="form-control" />
+
+                        <span asp-validation-for="Date"
+                              class="text-danger"></span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Products -->
+        <div class="card shadow-sm border-0 mb-4">
+
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Purchase Items</h5>
+
+                <button type="button"
+                        class="btn btn-success btn-sm"
+                        onclick="addItem()">
+                    + Add Product
+                </button>
+            </div>
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered align-middle">
+
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Product</th>
+                                <th style="width: 150px;">Quantity</th>
+                                <th style="width: 180px;">Unit Price</th>
+                                <th style="width: 150px;">Subtotal</th>
+                                <th style="width: 80px;">Remove</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="itemsTableBody">
+                        </tbody>
+
+                        <tfoot>
+                            <tr>
+                                <td colspan="3"
+                                    class="text-end fw-bold">
+                                    Total:
+                                </td>
+
+                                <td id="grandTotal"
+                                    class="fw-bold">
+                                    0.00
+                                </td>
+
+                                <td></td>
+                            </tr>
+                        </tfoot>
+
+                    </table>
+
+                </div>
+
+                <div id="emptyMessage"
+                     class="text-center text-muted p-3">
+                    No products added yet. Click "Add Product".
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="d-flex justify-content-end gap-2">
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+                Cancel
+            </a>
+
+            <button type="submit"
+                    class="btn btn-primary">
+                Create Purchase
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+<script>
+
+    let itemIndex = 0;
+
+    const products = [
+        @if (products != null)
+        {
+                foreach (var product in products)
+                {
+                        <text>
+                        {
+                            id: "@product.ID",
+                            name: "@Html.Raw(product.Name.Replace("\"", "\\\""))"
+                        },
+                        </text>
+                }
+        }
+    ];
+
+
+    function addItem() {
+
+        const tableBody = document.getElementById("itemsTableBody");
+        const emptyMessage = document.getElementById("emptyMessage");
+
+        emptyMessage.style.display = "none";
+
+        let options = '<option value="">-- Select Product --</option>';
+
+        products.forEach(function (product) {
+
+            options += `
+                <option value="${product.id}">
+                    ${product.name}
+                </option>
+            `;
+
+        });
+
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+
+            <td>
+
+                <select name="Items[${itemIndex}].ProductID"
+                        class="form-select product-select"
+                        required>
+
+                    ${options}
+
+                </select>
+
+            </td>
+
+
+            <td>
+
+                <input type="number"
+                       name="Items[${itemIndex}].Quantity"
+                       class="form-control quantity-input"
+                       min="1"
+                       value="1"
+                       required
+                       oninput="calculateTotal()" />
+
+            </td>
+
+
+            <td>
+
+                <input type="number"
+                       name="Items[${itemIndex}].UnitPrice"
+                       class="form-control price-input"
+                       min="0.01"
+                       step="0.01"
+                       required
+                       oninput="calculateTotal()" />
+
+            </td>
+
+
+            <td class="subtotal fw-bold">
+                0.00
+            </td>
+
+
+            <td>
+
+                <button type="button"
+                        class="btn btn-danger btn-sm"
+                        onclick="removeItem(this)">
+                    ×
+                </button>
+
+            </td>
+
+        `;
+
+
+        tableBody.appendChild(row);
+
+        itemIndex++;
+
+        calculateTotal();
+    }
+
+
+    function removeItem(button) {
+
+        button.closest("tr").remove();
+
+        calculateTotal();
+
+        const tableBody = document.getElementById("itemsTableBody");
+
+        if (tableBody.children.length === 0) {
+
+            document.getElementById("emptyMessage")
+                .style.display = "block";
+
+        }
+
+    }
+
+
+    function calculateTotal() {
+
+        let total = 0;
+
+        const rows = document.querySelectorAll(
+            "#itemsTableBody tr"
+        );
+
+
+        rows.forEach(function (row) {
+
+            const quantity = parseFloat(
+                row.querySelector(".quantity-input").value
+            ) || 0;
+
+            const price = parseFloat(
+                row.querySelector(".price-input").value
+            ) || 0;
+
+            const subtotal = quantity * price;
+
+            row.querySelector(".subtotal")
+                .textContent = subtotal.toFixed(2);
+
+            total += subtotal;
+
+        });
+
+
+        document.getElementById("grandTotal")
+            .textContent = total.toFixed(2);
+
+    }
+
+
+    // Add first product automatically
+    addItem();
+
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
