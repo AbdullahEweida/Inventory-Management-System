@@ -61,65 +61,65 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\css\site.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\favicon.ico
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\js\site.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation\dist\additional-methods.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation\dist\jquery.validate.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation\LICENSE.md
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.min.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.min.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.slim.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.slim.min.js
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.slim.min.map
-E:\ITI_Full Stack Web .Net\ITI-GraduationProject\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\LICENSE.txt
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\css\site.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\favicon.ico
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\js\site.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation\dist\additional-methods.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery-validation\LICENSE.md
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.min.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.min.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.slim.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.slim.min.js
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\dist\jquery.slim.min.map
+C:\new\Inventory-Management-System\InventoryApp\wwwroot\lib\jquery\LICENSE.txt

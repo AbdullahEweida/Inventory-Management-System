@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "ContainingType": "InventoryApp.Controllers.AIController",
+    "Method": "AnalyzeInventory",
+    "RelativePath": "api/AI/inventory-analysis",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
