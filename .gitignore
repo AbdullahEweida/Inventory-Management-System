@@ -1,4 +1,11 @@
 .vs/
+
 [Bb]in/
+
 [Oo]bj/
+
 *.user
+
+~$*
+*.o2w~
+*.bkp
