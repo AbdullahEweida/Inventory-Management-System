@@ -506,7 +506,7 @@
                 console.log("API Response:", result);
 
                 if (!response.ok || result.success === false) {
-                    throw new Error(result.error || 'Error Happend');
+                    throw new Error(result.error || 'Error');
                 }
 
                 // الداتا الفعلية اللي راجعة من الجيميني
