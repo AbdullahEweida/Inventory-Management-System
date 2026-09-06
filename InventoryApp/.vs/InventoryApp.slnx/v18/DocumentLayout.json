@@ -1,21 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\track dot net\\task iti\\project\\Inventory-Management-System-main\\Inventory-Management-System-main\\InventoryApp\\",
+  "WorkspaceRootPath": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|d:\\track dot net\\task iti\\project\\inventory-management-system-main\\inventory-management-system-main\\inventoryapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|e:\\iti_full stack web .net\\iti-graduationproject\\inventory-management-system\\inventoryapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|d:\\track dot net\\task iti\\project\\inventory-management-system-main\\inventory-management-system-main\\inventoryapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|e:\\iti_full stack web .net\\iti-graduationproject\\inventory-management-system\\inventoryapp\\controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|solutionrelative:controllers\\purchasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|e:\\iti_full stack web .net\\iti-graduationproject\\inventory-management-system\\inventoryapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|d:\\track dot net\\task iti\\project\\inventory-management-system-main\\inventory-management-system-main\\inventoryapp\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|solutionrelative:viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|e:\\iti_full stack web .net\\iti-graduationproject\\inventory-management-system\\inventoryapp\\views\\inventory\\lowstockalerts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|solutionrelative:views\\inventory\\lowstockalerts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|e:\\iti_full stack web .net\\iti-graduationproject\\inventory-management-system\\inventoryapp\\services\\aiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|solutionrelative:services\\aiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|e:\\iti_full stack web .net\\iti-graduationproject\\inventory-management-system\\inventoryapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|e:\\iti_full stack web .net\\iti-graduationproject\\inventory-management-system\\inventoryapp\\views\\purchase\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D21090C6-0F3E-A69A-5341-25A916D2E71F}|InventoryApp.csproj|solutionrelative:views\\purchase\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,69 +38,98 @@
       "DocumentGroups": [
         {
           "DockedWidth": 463,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\track dot net\\task iti\\project\\Inventory-Management-System-main\\Inventory-Management-System-main\\InventoryApp\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\track dot net\\task iti\\project\\Inventory-Management-System-main\\Inventory-Management-System-main\\InventoryApp\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAJMBAAAAAAAAAAAkwJ4BAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-05T22:18:47.409Z",
+              "Title": "PurchaseController.cs",
+              "DocumentMoniker": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Controllers\\PurchaseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PurchaseController.cs",
+              "ToolTip": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Controllers\\PurchaseController.cs",
+              "RelativeToolTip": "Controllers\\PurchaseController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAwwGgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-06T14:34:05.503Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AIServices.cs",
+              "DocumentMoniker": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Services\\AIServices.cs",
+              "RelativeDocumentMoniker": "Services\\AIServices.cs",
+              "ToolTip": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Services\\AIServices.cs",
+              "RelativeToolTip": "Services\\AIServices.cs",
+              "ViewState": "AgIAAGsBAAAAAAAAAAAAAMYAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-06T14:01:33.456Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\track dot net\\task iti\\project\\Inventory-Management-System-main\\Inventory-Management-System-main\\InventoryApp\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\track dot net\\task iti\\project\\Inventory-Management-System-main\\Inventory-Management-System-main\\InventoryApp\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-05T22:14:47.376Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-06T13:26:41.125Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DashboardViewModel.cs",
-              "DocumentMoniker": "D:\\track dot net\\task iti\\project\\Inventory-Management-System-main\\Inventory-Management-System-main\\InventoryApp\\ViewModels\\DashboardViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\DashboardViewModel.cs",
-              "ToolTip": "D:\\track dot net\\task iti\\project\\Inventory-Management-System-main\\Inventory-Management-System-main\\InventoryApp\\ViewModels\\DashboardViewModel.cs",
-              "RelativeToolTip": "ViewModels\\DashboardViewModel.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAADwvyQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-05T22:13:54.211Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACcCAAAAAAAAAAAgwC4CAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-06T12:49:50.44Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Microsoft.PackageDependencyResolution.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\10.0.400\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ViewState": "AgIAAAABAAAAAAAAAAAnwAkBAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-09-05T21:57:37.115Z",
-              "EditorCaption": ""
+              "Title": "LowStockAlerts.cshtml",
+              "DocumentMoniker": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Views\\Inventory\\LowStockAlerts.cshtml",
+              "RelativeDocumentMoniker": "Views\\Inventory\\LowStockAlerts.cshtml",
+              "ToolTip": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Views\\Inventory\\LowStockAlerts.cshtml",
+              "RelativeToolTip": "Views\\Inventory\\LowStockAlerts.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-06T12:23:45.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Views\\Purchase\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Purchase\\Create.cshtml",
+              "ToolTip": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Views\\Purchase\\Create.cshtml",
+              "RelativeToolTip": "Views\\Purchase\\Create.cshtml",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAJUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-06T12:23:14.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAwCkAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-06T12:15:52.813Z"
             }
           ]
         }

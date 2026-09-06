@@ -159,86 +159,50 @@ namespace InventoryApp.Services
                 // Build the Gemini prompt
                 // Important: we are NOT embedding a JSON object directly
                 // inside the interpolated string, avoiding brace/interpolation issues.
-                var prompt = $"""
-You are an AI inventory management assistant.
-
-Analyze the inventory data below.
-
-IMPORTANT RULES:
-
-1. The backend has already calculated "status".
-2. The backend has already calculated "needsRestocking".
-3. DO NOT change those values.
-4. DO NOT invent products.
-5. DO NOT invent stock quantities.
-6. Use exactly the products provided.
-7. Your job is to generate useful recommendations and inventory analysis.
+                // Build the Gemini prompt (Smart Analytical Version)
+                // Build the Gemini prompt (Smart Analytical Version)
+                var prompt = $$"""
+You are an Expert Supply Chain and Retail Business Analyst. 
+Review the following inventory data carefully.
 
 Inventory data:
+{{inventoryJson}}
 
-{inventoryJson}
+IMPORTANT RULES FOR YOUR ANALYSIS:
+1. DO NOT give me basic logical statements like "Stock is low, reorder". The database already does that.
+2. Provide STRATEGIC INSIGHTS: Identify potential "dead stock" (slow-moving items), suggest bundle offers, or recommend dynamic pricing/discounts to clear out excess inventory.
+3. For products that need restocking, suggest a specific action (e.g., "Reorder 50 units to meet baseline demand").
+4. Keep the exact "name", "sku", "stockQuantity", and "status" as provided. Do not invent products.
 
 Return ONLY valid JSON.
+Do NOT use Markdown fences like ```json.
+Do NOT add any text outside the JSON object.
 
-Do NOT use Markdown.
-Do NOT use ```json.
-Do NOT add explanations before or after the JSON.
-
-The response must contain these sections:
-
-summary:
-- totalProducts = {totalProducts}
-- healthyProducts = {healthyProducts}
-- lowStockProducts = {lowStockProducts}
-- criticalProducts = {criticalProducts}
-- productsNeedingRestock = {productsNeedingRestock}
-- overallStatus = {overallStatus}
-
-products:
-
-For every product return:
-- name
-- sku
-- stockQuantity
-- lowStockThreshold
-- status
-- needsRestocking
-- priority
-- recommendation
-
-Priority rules:
-
-- Critical = priority 1
-- Low = priority 2
-- Healthy = priority 3
-
-Recommendation rules:
-
-- Critical products should be restocked immediately.
-- Low stock products should be restocked soon.
-- Healthy products should continue to be monitored.
-- Recommendations should be short and practical.
-
-priorityActions:
-
-Return the most urgent inventory actions.
-
-generalRecommendations:
-
-Return useful general recommendations for improving inventory management.
-
-Return one valid JSON object containing:
-
-summary
-products
-priorityActions
-generalRecommendations
-""";
-
-                // Create Gemini API request body
+The response MUST perfectly match this JSON structure:
+{
+  "summary": {
+    "totalProducts": {{totalProducts}},
+    "healthyProducts": {{healthyProducts}},
+    "lowStockProducts": {{lowStockProducts}},
+    "criticalProducts": {{criticalProducts}}
+  },
+  "priorityActions": [
+    "Write 2-3 URGENT business actions here. Be specific. (e.g., 'Expedite shipping for Product X to prevent revenue loss due to stockout.')"
+  ],
+  "products": [
+    // Return all {{totalProducts}} products here.
+    // Ensure each product has: name, sku, stockQuantity, status.
+    // PLUS a "recommendation" field containing your smart business insight for that specific item.
+  ],
+  "generalRecommendations": [
+    "Write 2-3 strategic long-term tips.",
+    "Draft a short, professional Email template to a supplier requesting an urgent restock for the critical items."
+  ]
+}
+""";          
                 var requestBody = new
                 {
-                    model = "gemini-3.6-flash",
+                    model = "gemini-3.8-flash",
                     input = prompt
                 };
 

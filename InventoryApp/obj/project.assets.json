@@ -3144,23 +3144,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Candle-Home\\.nuget\\packages\\": {},
+    "C:\\Users\\metr\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\track dot net\\task iti\\project\\Inventory-Management-System-main\\Inventory-Management-System-main\\InventoryApp\\InventoryApp.csproj",
+      "projectUniqueName": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\InventoryApp.csproj",
       "projectName": "InventoryApp",
-      "projectPath": "D:\\track dot net\\task iti\\project\\Inventory-Management-System-main\\Inventory-Management-System-main\\InventoryApp\\InventoryApp.csproj",
-      "packagesPath": "C:\\Users\\Candle-Home\\.nuget\\packages\\",
-      "outputPath": "D:\\track dot net\\task iti\\project\\Inventory-Management-System-main\\Inventory-Management-System-main\\InventoryApp\\obj\\",
+      "projectPath": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\InventoryApp.csproj",
+      "packagesPath": "C:\\Users\\metr\\.nuget\\packages\\",
+      "outputPath": "E:\\ITI_Full Stack Web .Net\\ITI-GraduationProject\\Inventory-Management-System\\InventoryApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Candle-Home\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\metr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

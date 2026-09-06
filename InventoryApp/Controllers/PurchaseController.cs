@@ -101,6 +101,7 @@ namespace InventoryApp.Controllers
 
                 // Increase stock
                 product.StockQuantity += item.Quantity;
+                product.UnitPrice = item.UnitPrice;
             }
 
             _db.Purchases.Add(purchase);

@@ -431,62 +431,71 @@
                             <i class="bi bi-magic me-1"></i> Smart Analysis
                         </button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- AI Analysis Modal -->
-<div class="modal fade" id="aiAnalysisModal" tabindex="-1" aria-labelledby="aiAnalysisModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content" style="border-radius: 16px; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
 
-            <!-- الهيدر -->
-            <div class="modal-header border-bottom-0 pb-0">
-                <h5 class="modal-title fw-bold" id="aiAnalysisModalLabel" style="color: #1e293b;">
-                    <i class="bi bi-robot me-2" style="color: #7c3aed;"></i> AI Inventory Insights
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+                    <div class="card-body p-4" id="aiResultsContainer" style="display: none; background: #f8fafc;">
 
-            <!-- جسم النافذة (هنا كان المشكلة غالباً) -->
-            <div class="modal-body p-4">
+                        <div id="aiLoader" class="text-center py-4">
+                            <div class="spinner-border" style="color: #7c3aed;" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-3 text-muted fw-semibold">The AI is analyzing your data, please wait...</p>
+                        </div>
 
-                <!-- الترحيب -->
-                <div id="aiIntro" class="text-center py-4">
-                    <i class="bi bi-stars" style="font-size: 3rem; color: #cbd5e1;"></i>
-                    <p class="mt-3 text-muted">Ready to analyze your current stock levels and sales trends?</p>
-                </div>
+                        <!-- النتيجة -->
+                        <div id="aiContent" style="display: none;">
+                            <!-- هيتم حقن النتيجة هنا بالجافاسكريبت -->
+                        </div>
 
-                <!-- التحميل -->
-                <div id="aiLoader" class="text-center py-4" style="display: none;">
-                    <div class="spinner-border" style="color: #7c3aed;" role="status">
-                        <span class="visually-hidden">Loading...</span>
                     </div>
-                    <p class="mt-3 text-muted fw-semibold">Analyzing your data, please wait...</p>
                 </div>
-
-                <!-- النتيجة (تأكد إن ده جوه الـ modal-body) -->
-                <div id="aiContent" class="w-100" style="display: none;">
-                    <!-- الجافاسكريبت هيحقن الـ HTML هنا -->
-                </div>
-
             </div>
+        </div>
+    </div>
+    <!-- AI Analysis Modal -->
+    <div class="modal fade" id="aiAnalysisModal" tabindex="-1" aria-labelledby="aiAnalysisModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content" style="border-radius: 16px; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
 
-            <!-- الفوتر -->
-            <div class="modal-footer border-top-0 pt-0 justify-content-center">
-                <button type="button" id="btnRunAnalysis" class="btn text-white w-100" style="background-color: #7c3aed; border-radius: 12px; padding: 12px;">
-                    <i class="bi bi-cpu me-2"></i> Generate Report
-                </button>
+                <div class="modal-header border-bottom-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="aiAnalysisModalLabel" style="color: #1e293b;">
+                        <i class="bi bi-robot me-2" style="color: #7c3aed;"></i> AI Inventory Insights
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body p-4">
+
+                    <div id="aiIntro" class="text-center py-4">
+                        <i class="bi bi-stars" style="font-size: 3rem; color: #cbd5e1;"></i>
+                        <p class="mt-3 text-muted">Ready to analyze your current stock levels and sales trends?</p>
+                    </div>
+
+                    <div id="aiLoader" class="text-center py-4" style="display: none;">
+                        <div class="spinner-border" style="color: #7c3aed;" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-3 text-muted fw-semibold">Analyzing your data, please wait...</p>
+                    </div>
+
+                    <div id="aiContent" style="display: none;">
+                        <!-- هيتم حقن النتيجة هنا -->
+                    </div>
+                </div>
+
+                <!-- فوتر النافذة وفيه زرار التشغيل -->
+                <div class="modal-footer border-top-0 pt-0 justify-content-center">
+                    <button type="button" id="btnRunAnalysis" class="btn text-white w-100" style="background-color: #7c3aed; border-radius: 12px; padding: 12px;">
+                        <i class="bi bi-cpu me-2"></i> Generate Report
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 
 @section Scripts {
     <script>
-        document.getElementById('btnRunAnalysis').addEventListener('click', async function() {
+        document.getElementById('btnRunAnalysis').addEventListener('click', async function () {
             const intro = document.getElementById('aiIntro');
             const loader = document.getElementById('aiLoader');
             const content = document.getElementById('aiContent');
@@ -497,107 +506,100 @@
             loader.style.display = 'block';
             btn.disabled = true;
             btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Processing...';
-
+            
             try {
                 const response = await fetch('/api/AI/inventory-analysis');
                 const result = await response.json();
 
-                // بنطبع النتيجة في الكونسول عشان لو فيه خطأ نقدر نتتبعه
-                console.log("API Response:", result);
-
                 if (!response.ok || result.success === false) {
-                    throw new Error(result.error || 'Error Happend');
+                    throw new Error(result.error || 'حدث خطأ غير متوقع أثناء تحليل البيانات.');
                 }
 
-                // الداتا الفعلية اللي راجعة من الجيميني
-                const aiData = result.data;
-
-                if (!aiData || !aiData.summary) {
-                    throw new Error('The Data is not in formal.');
-                }
+                // الداتا الفعلية اللي راجعة من الجيميني (عشان الباك إند مغلفها جوه data)
+                const aiData = result.data; 
 
                 // 1. رسم قسم الإحصائيات (Summary)
                 let summaryHtml = `
-                            <div class="row text-center mb-4 g-2">
-                                <div class="col-6 col-md-3">
-                                    <div class="p-3 bg-light rounded shadow-sm border">
-                                        <h6 class="text-muted mb-1" style="font-size: 0.8rem;">Total Products</h6>
-                                        <h4 class="mb-0 fw-bold">${aiData.summary.totalProducts}</h4>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="p-3 rounded shadow-sm border" style="background-color: #f0fdf4;">
-                                        <h6 class="text-success mb-1" style="font-size: 0.8rem;">Healthy</h6>
-                                        <h4 class="mb-0 fw-bold text-success">${aiData.summary.healthyProducts}</h4>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="p-3 rounded shadow-sm border" style="background-color: #fffbeb;">
-                                        <h6 class="text-warning mb-1" style="font-size: 0.8rem;">Low Stock</h6>
-                                        <h4 class="mb-0 fw-bold text-warning">${aiData.summary.lowStockProducts}</h4>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="p-3 rounded shadow-sm border" style="background-color: #fef2f2;">
-                                        <h6 class="text-danger mb-1" style="font-size: 0.8rem;">Critical</h6>
-                                        <h4 class="mb-0 fw-bold text-danger">${aiData.summary.criticalProducts}</h4>
-                                    </div>
-                                </div>
+                    <div class="row text-center mb-4 g-2">
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 bg-light rounded shadow-sm border">
+                                <h6 class="text-muted mb-1" style="font-size: 0.8rem;">Total Products</h6>
+                                <h4 class="mb-0 fw-bold">${aiData.summary.totalProducts}</h4>
                             </div>
-                        `;
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded shadow-sm border" style="background-color: #f0fdf4;">
+                                <h6 class="text-success mb-1" style="font-size: 0.8rem;">Healthy</h6>
+                                <h4 class="mb-0 fw-bold text-success">${aiData.summary.healthyProducts}</h4>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded shadow-sm border" style="background-color: #fffbeb;">
+                                <h6 class="text-warning mb-1" style="font-size: 0.8rem;">Low Stock</h6>
+                                <h4 class="mb-0 fw-bold text-warning">${aiData.summary.lowStockProducts}</h4>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded shadow-sm border" style="background-color: #fef2f2;">
+                                <h6 class="text-danger mb-1" style="font-size: 0.8rem;">Critical</h6>
+                                <h4 class="mb-0 fw-bold text-danger">${aiData.summary.criticalProducts}</h4>
+                            </div>
+                        </div>
+                    </div>
+                `;
 
                 // 2. رسم قسم الإجراءات العاجلة (Priority Actions)
                 let actionsHtml = '';
                 if (aiData.priorityActions && aiData.priorityActions.length > 0) {
                     actionsHtml = `
-                                <h6 class="fw-bold text-danger mb-3"><i class="bi bi-exclamation-octagon-fill me-2"></i>Priority Actions</h6>
-                                <ul class="list-group mb-4 shadow-sm">
-                                    ${aiData.priorityActions.map(action => `<li class="list-group-item list-group-item-danger border-0 mb-1 rounded"><i class="bi bi-arrow-right-short me-1"></i>${action}</li>`).join('')}
-                                </ul>
-                            `;
+                        <h6 class="fw-bold text-danger mb-3"><i class="bi bi-exclamation-octagon-fill me-2"></i>Priority Actions</h6>
+                        <ul class="list-group mb-4 shadow-sm">
+                            ${aiData.priorityActions.map(action => `<li class="list-group-item list-group-item-danger border-0 mb-1 rounded"><i class="bi bi-arrow-right-short me-1"></i>${action}</li>`).join('')}
+                        </ul>
+                    `;
                 }
 
                 // 3. رسم جدول المنتجات والتوصيات (Product Recommendations)
                 let productsHtml = `
-                            <h6 class="fw-bold text-primary mb-3"><i class="bi bi-box-seam me-2"></i>Product Insights</h6>
-                            <div class="table-responsive mb-4 shadow-sm rounded border">
-                                <table class="table table-hover mb-0" style="font-size: 0.9rem;">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Product</th>
-                                            <th>Status</th>
-                                            <th>AI Recommendation</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                        `;
-
+                    <h6 class="fw-bold text-primary mb-3"><i class="bi bi-box-seam me-2"></i>Product Insights</h6>
+                    <div class="table-responsive mb-4 shadow-sm rounded border">
+                        <table class="table table-hover mb-0" style="font-size: 0.9rem;">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Status</th>
+                                    <th>AI Recommendation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                `;
+                
                 aiData.products.forEach(p => {
                     let badgeClass = p.status === 'Critical' ? 'bg-danger' : (p.status === 'Low' ? 'bg-warning text-dark' : 'bg-success');
                     productsHtml += `
-                                        <tr>
-                                            <td class="fw-semibold">${p.name} <span class="d-block text-muted" style="font-size: 0.75rem;">SKU: ${p.sku} | Stock: ${p.stockQuantity}</span></td>
-                                            <td class="align-middle"><span class="badge ${badgeClass}">${p.status}</span></td>
-                                            <td class="align-middle text-muted">${p.recommendation}</td>
-                                        </tr>
-                            `;
+                                <tr>
+                                    <td class="fw-semibold">${p.name} <span class="d-block text-muted" style="font-size: 0.75rem;">SKU: ${p.sku} \vert{} Stock:${p.stockQuantity}</span></td>
+                                    <td class="align-middle"><span class="badge ${badgeClass}">${p.status}</span></td>
+                                    <td class="align-middle text-muted">${p.recommendation}</td>
+                                </tr>
+                    `;
                 });
-
+                
                 productsHtml += `
-                                    </tbody>
-                                </table>
-                            </div>
-                        `;
+                            </tbody>
+                        </table>
+                    </div>
+                `;
 
                 // 4. رسم قسم التوصيات العامة (General Recommendations)
                 let generalHtml = '';
                 if (aiData.generalRecommendations && aiData.generalRecommendations.length > 0) {
-                    generalHtml = `
-                                <h6 class="fw-bold mt-2" style="color: #7c3aed;"><i class="bi bi-lightbulb-fill me-2"></i>General Recommendations</h6>
-                                <ul class="list-group list-group-flush shadow-sm rounded border">
-                                    ${aiData.generalRecommendations.map(rec => `<li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>${rec}</li>`).join('')}
-                                </ul>
-                             `;
+                     generalHtml = `
+                        <h6 class="fw-bold mt-2" style="color: #7c3aed;"><i class="bi bi-lightbulb-fill me-2"></i>General Recommendations</h6>
+                        <ul class="list-group list-group-flush shadow-sm rounded border">
+                            ${aiData.generalRecommendations.map(rec => `<li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>${rec}</li>`).join('')}
+                        </ul>
+                     `;
                 }
 
                 // تجميع كل الأقسام وحقنها في الـ Modal
@@ -606,17 +608,12 @@
                 btn.style.display = 'none';
 
             } catch (error) {
-                console.error("Caught Error:", error);
-
                 content.innerHTML = `
-                            <div class="alert alert-danger border-0 shadow-sm mt-3">
-                                <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                                <strong>حدث خطأ:</strong> <br>
-                                <span style="font-size: 0.9rem;">${error.message}</span>
-                            </div>
-                        `;
-
-                document.getElementById('aiIntro').style.display = 'none';
+                    <div class="alert alert-danger border-0 shadow-sm">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <strong>Error:</strong> ${error.message}
+                    </div>
+                `;
                 content.style.display = 'block';
                 btn.disabled = false;
                 btn.innerHTML = '<i class="bi bi-arrow-clockwise me-2"></i> Try Again';
@@ -626,12 +623,12 @@
         });
 
         // ريست للنافذة لما تتقفل
-        const aiModalElement = document.getElementById('aiAnalysisModal');
+        const aiModalElement = document.getElementById('aiAnalysisModal')
         aiModalElement.addEventListener('hidden.bs.modal', event => {
             document.getElementById('aiIntro').style.display = 'block';
             document.getElementById('aiContent').style.display = 'none';
             document.getElementById('aiLoader').style.display = 'none';
-
+            
             const btn = document.getElementById('btnRunAnalysis');
             btn.style.display = 'block';
             btn.disabled = false;
