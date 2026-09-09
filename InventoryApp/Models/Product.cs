@@ -17,9 +17,8 @@ namespace InventoryApp.Models
         [Required(ErrorMessage = "Low stock threshold is required")]
         [Range(1, int.MaxValue, ErrorMessage = "Low stock threshold must be greater than 0")]
         public int LowStockThreshold { get; set; }
-        [Required(ErrorMessage = "Stock quantity is required")]
-        [Range(1, int.MaxValue, ErrorMessage = "Stock quantity must be greater than 0")]
-        public int StockQuantity { get; set; }
+
+        public int StockQuantity { get; set; } = 0;
         // foreign key
         public Guid CategoryID { get; set; }
 

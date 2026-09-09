@@ -7,7 +7,7 @@
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>Product Management</h2>
-        <a asp-action="Add" class="btn btn-primary">
+        <a asp-action="Add" class="btn btn-primary rounded-pill">
             <i class="bi bi-plus-circle"></i> Add New Product
         </a>
     </div>
@@ -21,7 +21,7 @@
             <div class="col-md-4">
                 <input type="text"
                        name="searchString"
-                       value="@ViewBag.CurrentSearch"
+                       value="@Model.CurrentSearch"
                        class="form-control"
                        placeholder="Search by name or SKU..." />
             </div>
@@ -29,7 +29,7 @@
            
             <div class="col-md-3">
                 <select name="categoryId"
-                        asp-items="ViewBag.Categories"
+                        asp-items="Model.CategoriesList"
                         class="form-select"
                         onchange="this.form.submit()">
                     <option value=""> All Categories </option>
@@ -42,21 +42,23 @@
                         class="form-select"
                         onchange="this.form.submit()">
                     <option value="">All Stock Status </option>
-                    <option value="in" selected="@(ViewBag.CurrentStockStatus == "in")">In Stock</option>
-                    <option value="low" selected="@(ViewBag.CurrentStockStatus == "low")">Low Stock</option>
-                    <option value="out" selected="@(ViewBag.CurrentStockStatus == "out")">Out of Stock</option>
+                    <option value="in" selected="@(Model.CurrentStockStatus == "in")">In Stock</option>
+                    <option value="low" selected="@(Model.CurrentStockStatus == "low")">Low Stock</option>
+                    <option value="out" selected="@(Model.CurrentStockStatus == "out")">Out of Stock</option>
                 </select>
             </div>
 
             <div class="col-md-2">
-                <a asp-action="Index" class="btn btn-outline-secondary w-100">Reset</a>
+                <a asp-action="Index" class="btn btn-outline-secondary  rounded-pill w-100">Reset</a>
             </div>
         </div>
     </form>
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <table class="table table-hover table-striped align-middle">
-                <thead class="table-dark">
+    <div class="card border-0 shadow-sm rounded-3 mt-3">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-borderless align-middle text-nowrap mb-0" id="stockTable">
+                    <thead class="table-light border-bottom">
+        
                     <tr>
                         <th>SKU</th>
                         <th>Name</th>
@@ -72,7 +74,8 @@
                     {
                         @foreach (var item in Model.Products)
                         {
-                            bool isLowStock = item.StockQuantity <= item.LowStockThreshold;
+                                bool isOutOfStock = item.StockQuantity == 0;
+                                bool isLowStock = item.StockQuantity > 0 && item.StockQuantity <= item.LowStockThreshold;
                             <tr>
                                 <td>@(string.IsNullOrEmpty(item.SKU) ? "N/A" : item.SKU)</td>
                                 <td><strong>@item.Name</strong></td>
@@ -80,14 +83,18 @@
                                 <td>@item.UnitPrice.ToString("C")</td>
                                 <td>@item.StockQuantity</td>
                                 <td>
-                                    @if (isLowStock)
-                                    {
-                                        <span class="badge bg-danger">Low Stock</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="badge bg-success">Available</span>
-                                    }
+                                        @if (isOutOfStock)
+                                        {
+                                            <span class="badge bg-danger">Out of Stock</span>
+                                        }
+                                        else if (isLowStock)
+                                        {
+                                            <span class="badge bg-warning text-dark">Low Stock</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-success">Available</span>
+                                        }
                                     <td class="text-center">
                                         <div class="dropdown">
                                             <button class="btn btn-light btn-sm rounded-circle p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 32px; height: 32px;">
@@ -137,9 +144,9 @@
                                 <a class="page-link"
                                    asp-action="Index"
                                    asp-route-page="@(Model.CurrentPage - 1)"
-                                   asp-route-searchString="@ViewBag.CurrentSearch"
-                                   asp-route-categoryId="@ViewBag.CurrentCategory"
-                                   asp-route-stockStatus="@ViewBag.CurrentStockStatus">Previous</a>
+                                   asp-route-searchString="@Model.CurrentSearch"
+                                   asp-route-categoryId="@Model.CurrentCategory"
+                                   asp-route-stockStatus="@Model.CurrentStockStatus">Previous</a>
                             </li>
 
                          
@@ -149,9 +156,9 @@
                                     <a class="page-link"
                                        asp-action="Index"
                                        asp-route-page="@i"
-                                       asp-route-searchString="@ViewBag.CurrentSearch"
-                                       asp-route-categoryId="@ViewBag.CurrentCategory"
-                                       asp-route-stockStatus="@ViewBag.CurrentStockStatus">@i</a>
+                                       asp-route-searchString="@Model.CurrentSearch"
+                                       asp-route-categoryId="@Model.CurrentCategory"
+                                       asp-route-stockStatus="@Model.CurrentStockStatus">@i</a>
                                 </li>
                             }
 
@@ -159,9 +166,9 @@
                                 <a class="page-link"
                                    asp-action="Index"
                                    asp-route-page="@(Model.CurrentPage + 1)"
-                                   asp-route-searchString="@ViewBag.CurrentSearch"
-                                   asp-route-categoryId="@ViewBag.CurrentCategory"
-                                   asp-route-stockStatus="@ViewBag.CurrentStockStatus">Next</a>
+                                   asp-route-searchString="@Model.CurrentSearch"
+                                   asp-route-categoryId="@Model.CurrentCategory"
+                                   asp-route-stockStatus="@Model.CurrentStockStatus">Next</a>
                             </li>
 
                         </ul>

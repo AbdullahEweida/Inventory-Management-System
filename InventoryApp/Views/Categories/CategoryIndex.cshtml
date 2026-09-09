@@ -8,14 +8,13 @@
 
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h2">Category Management</h1>
-        <a asp-action="Add" class="btn btn-primary">Add New Category</a>
+        <a asp-action="Add" class="btn btn-primary rounded-pill">Add New Category</a>
     </div>
 
    
 
-   
-    <table class="table table-hover align-middle">
-        <thead class="table-dark">
+    <table class="table table-hover table-borderless align-middle text-nowrap mb-0" id="stockTable">
+        <thead class="table-light border-bottom">
             <tr>
                 <th>Category Name</th>
                 <th>Description</th>

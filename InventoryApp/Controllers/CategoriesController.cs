@@ -5,8 +5,7 @@ using InventoryApp.ViewModels;
 using InventoryApp.ViewModels.Products;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Linq;
+
 
 namespace InventoryApp.Controllers
 {
@@ -161,6 +160,7 @@ namespace InventoryApp.Controllers
 
 
         // Details
+        // Details
         public IActionResult Details(Guid id)
         {
             var category = context.Categories
@@ -174,17 +174,18 @@ namespace InventoryApp.Controllers
                 Id = category.ID,
                 Name = category.Name,
                 Description = category.Description,
-                ProductsCount = category.Products != null ? category.Products.Count : 0
-            };
+                ProductsCount = category.Products != null ? category.Products.Count : 0,
 
-            ViewBag.Products = category.Products?.Select(p => new ProductDetailsViewModel
-            {
-                Id = p.ID,
-                Name = p.Name,
-                SKU = p.SKU,
-                UnitPrice = p.UnitPrice,
-                StockQuantity = p.StockQuantity
-            }).ToList() ?? new List<ProductDetailsViewModel>();
+                
+                Products = category.Products?.Select(p => new ProductDetailsViewModel
+                {
+                    Id = p.ID,
+                    Name = p.Name,
+                    SKU = p.SKU,
+                    UnitPrice = p.UnitPrice,
+                    StockQuantity = p.StockQuantity
+                }).ToList() ?? new List<ProductDetailsViewModel>()
+            };
 
             return View(model);
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryApp.ViewModels.Products;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace InventoryApp.ViewModels
@@ -15,5 +16,7 @@ namespace InventoryApp.ViewModels
         public string? Description { get; set; }
 
         public int ProductsCount { get; set; }
+
+        public List<ProductDetailsViewModel> Products { get; set; } = new List<ProductDetailsViewModel>();
     }
 }

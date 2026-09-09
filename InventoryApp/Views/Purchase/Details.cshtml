@@ -71,10 +71,8 @@
             @if (Model.PurchaseItems != null && Model.PurchaseItems.Any())
             {
                 <div class="table-responsive">
-
-                    <table class="table table-bordered table-hover align-middle mb-0">
-
-                        <thead class="table-dark">
+                    <table class="table table-hover table-borderless align-middle text-nowrap mb-0" id="stockTable">
+                        <thead class="table-light border-bottom">
 
                             <tr>
                                 <th>#</th>
@@ -165,7 +163,7 @@
     <div class="mt-4">
 
         <a asp-action="Index"
-           class="btn btn-secondary">
+           class="btn btn-secondary  rounded-pill">
             Back to History
         </a>
 
