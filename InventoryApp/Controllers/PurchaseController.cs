@@ -111,6 +111,107 @@ namespace InventoryApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+
+
+        // Show Order Product page
+        [HttpGet]
+        public async Task<IActionResult> OrderProduct(Guid productId)
+        {
+            var product = await _db.Products.Include(p=> p.Category)
+                .FirstOrDefaultAsync(p => p.ID == productId);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Suppliers = await _db.Suppliers
+                .OrderBy(s => s.Name)
+                .ToListAsync();
+
+            return View(product);
+        }
+
+
+        // Confirm Order
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> OrderProduct(
+            Guid productId,
+            Guid supplierId,
+            int quantity)
+        {
+            // Get product
+            var product = await _db.Products
+                .FirstOrDefaultAsync(p => p.ID == productId);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            // Get supplier
+            var supplier = await _db.Suppliers
+                .FirstOrDefaultAsync(s => s.ID == supplierId);
+
+            if (supplier == null)
+            {
+                return NotFound();
+            }
+
+            // Validate quantity
+            if (quantity <= 0)
+            {
+                ModelState.AddModelError(
+                    "",
+                    "Quantity must be greater than 0."
+                );
+
+                ViewBag.Suppliers = await _db.Suppliers
+                    .OrderBy(s => s.Name)
+                    .ToListAsync();
+
+                return View(product);
+            }
+
+            // Create Purchase / Invoice
+            var purchase = new Purchase
+            {
+                
+                     Id = Guid.NewGuid(),
+                Date = DateTime.UtcNow,
+                SupplierID = supplierId,
+                PurchaseItems = new List<Purchase_Item>()
+            };
+
+            // Add product to invoice
+            var purchaseItem = new Purchase_Item
+            {
+                ID = Guid.NewGuid(),
+                PurchaseID = purchase.Id,
+                ProductID = product.ID,
+                Quantity = quantity,
+                UnitPrice = product.UnitPrice
+            };
+
+            purchase.PurchaseItems.Add(purchaseItem);
+
+            // Increase stock
+            product.StockQuantity += quantity;
+
+            // Save purchase
+            _db.Purchases.Add(purchase);
+
+            await _db.SaveChangesAsync();
+
+            // Open invoice details
+            return RedirectToAction(
+     nameof(Details),
+     new { id = purchase.Id }
+ );
+        }
+
         // Display purchase details
         public async Task<IActionResult> Details(Guid id)
         {

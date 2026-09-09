@@ -16,6 +16,18 @@ namespace InventoryApp.Controllers
             this.context = context;
         }
 
+        // دالة مساعدة خاصة لجلب قائمة الأقسام وتجنب تكرار الكود
+        private List<SelectListItem> GetCategoriesDropdown(Guid? selectedCategoryId = null)
+        {
+            return context.Categories
+                .Select(c => new SelectListItem
+                {
+                    Value = c.ID.ToString(),
+                    Text = c.Name,
+                    Selected = selectedCategoryId.HasValue && c.ID == selectedCategoryId.Value
+                })
+                .ToList();
+        }
 
         // Index
         public IActionResult Index(string searchString, Guid? categoryId, string stockStatus, int page = 1)
@@ -23,19 +35,17 @@ namespace InventoryApp.Controllers
             int pageSize = 10;
             var query = context.Products.Include(p => p.Category).AsQueryable();
 
-            // filter
+            // الفلترة
             if (!string.IsNullOrEmpty(searchString))
             {
                 query = query.Where(p => p.Name.Contains(searchString) || p.SKU.Contains(searchString));
             }
 
-            
             if (categoryId.HasValue && categoryId.Value != Guid.Empty)
             {
                 query = query.Where(p => p.CategoryID == categoryId);
             }
 
-            
             if (!string.IsNullOrEmpty(stockStatus))
             {
                 switch (stockStatus)
@@ -52,20 +62,13 @@ namespace InventoryApp.Controllers
                 }
             }
 
-        
-            ViewBag.CurrentSearch = searchString;
-            ViewBag.CurrentCategory = categoryId;
-            ViewBag.CurrentStockStatus = stockStatus;
-            ViewBag.Categories = new SelectList(context.Categories, "ID", "Name", categoryId);
-
-      
-            int totalProducts = query.Count(); 
+            int totalProducts = query.Count();
             int totalPages = (int)Math.Ceiling((double)totalProducts / pageSize);
 
             var productsList = query
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
-                .ToList(); 
+                .ToList();
 
             var model = new ProductIndexViewModel
             {
@@ -80,17 +83,15 @@ namespace InventoryApp.Controllers
                     LowStockThreshold = p.LowStockThreshold
                 }).ToList(),
                 CurrentPage = page,
-                TotalPages = totalPages
+                TotalPages = totalPages,
+                CurrentSearch = searchString,
+                CurrentCategory = categoryId,
+                CurrentStockStatus = stockStatus,
+                CategoriesList = GetCategoriesDropdown(categoryId)
             };
 
             return View("ProductIndex", model);
         }
-
-
-
-
-
-
 
         // Details
         public IActionResult Details(Guid id)
@@ -119,23 +120,25 @@ namespace InventoryApp.Controllers
             return View("ProductDetails", viewModel);
         }
 
-
-
-
-        //Add
+        // Add - GET
         [HttpGet]
         public IActionResult Add()
         {
-            ViewBag.Categories = new SelectList(context.Categories.ToList(), "ID", "Name");
-            return View("AddProduct");
+            var viewModel = new ProductViewModel
+            {
+                CategoriesList = GetCategoriesDropdown()
+            };
+
+            return View("AddProduct", viewModel);
         }
 
+        // Add - POST
         [HttpPost]
         public IActionResult Add(ProductViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.Categories = new SelectList(context.Categories.ToList(), "ID", "Name", viewModel.CategoryID);
+                viewModel.CategoriesList = GetCategoriesDropdown(viewModel.CategoryID);
                 return View("AddProduct", viewModel);
             }
 
@@ -147,9 +150,9 @@ namespace InventoryApp.Controllers
                     Name = viewModel.Name,
                     SKU = viewModel.SKU,
                     UnitPrice = viewModel.UnitPrice,
-                    StockQuantity = viewModel.StockQuantity,
+                 
                     LowStockThreshold = viewModel.LowStockThreshold,
-                    CategoryID = viewModel.CategoryID.Value
+                    CategoryID = viewModel.CategoryID!.Value
                 };
 
                 context.Products.Add(product);
@@ -159,12 +162,12 @@ namespace InventoryApp.Controllers
             catch
             {
                 ModelState.AddModelError("", "An error occurred while saving the product.");
-                ViewBag.Categories = new SelectList(context.Categories.ToList(), "ID", "Name", viewModel.CategoryID);
+                viewModel.CategoriesList = GetCategoriesDropdown(viewModel.CategoryID);
                 return View("AddProduct", viewModel);
             }
         }
 
-        // Edit
+        // Edit - GET
         [HttpGet]
         public IActionResult Edit(Guid id)
         {
@@ -183,20 +186,20 @@ namespace InventoryApp.Controllers
                 UnitPrice = product.UnitPrice,
                 StockQuantity = product.StockQuantity,
                 LowStockThreshold = product.LowStockThreshold,
-                CategoryID = product.CategoryID
+                CategoryID = product.CategoryID,
+                CategoriesList = GetCategoriesDropdown(product.CategoryID)
             };
 
-            ViewBag.Categories = new SelectList(context.Categories.ToList(), "ID", "Name", viewModel.CategoryID);
             return View("EditProduct", viewModel);
         }
 
-      
+        // Edit - POST
         [HttpPost]
         public IActionResult Edit(ProductViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.Categories = new SelectList(context.Categories.ToList(), "ID", "Name", viewModel.CategoryID);
+                viewModel.CategoriesList = GetCategoriesDropdown(viewModel.CategoryID);
                 return View("EditProduct", viewModel);
             }
 
@@ -210,7 +213,7 @@ namespace InventoryApp.Controllers
                 product.UnitPrice = viewModel.UnitPrice;
                 product.StockQuantity = viewModel.StockQuantity;
                 product.LowStockThreshold = viewModel.LowStockThreshold;
-                product.CategoryID = viewModel.CategoryID.Value;
+                product.CategoryID = viewModel.CategoryID!.Value;
 
                 context.Products.Update(product);
                 context.SaveChanges();
@@ -219,12 +222,12 @@ namespace InventoryApp.Controllers
             catch
             {
                 ModelState.AddModelError("", "An error occurred while updating the product.");
-                ViewBag.Categories = new SelectList(context.Categories.ToList(), "ID", "Name", viewModel.CategoryID);
+                viewModel.CategoriesList = GetCategoriesDropdown(viewModel.CategoryID);
                 return View("EditProduct", viewModel);
             }
         }
 
-        // Delete
+        // Delete - GET (عادة يفضل استدعاء صفحة تأكيد الحذف بدلاً من الحذف المباشر في GET)
         [HttpGet]
         public IActionResult Delete(Guid id)
         {
@@ -238,7 +241,7 @@ namespace InventoryApp.Controllers
             return RedirectToAction("Index");
         }
 
-     
+        // Delete - POST
         [HttpPost]
         [ActionName("Delete")]
         public IActionResult DeleteConfirmed(Guid id)

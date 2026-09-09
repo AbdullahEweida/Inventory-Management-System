@@ -4,7 +4,7 @@
 
 @{
     ViewData["Title"] = "Category Details";
-    var products = ViewBag.Products as List<ProductDetailsViewModel>;
+    var products = Model.Products as List<ProductDetailsViewModel>;
 }
 
 <div class="container mt-4">
@@ -30,7 +30,7 @@
                 <tbody>
                     @if (products != null && products.Any())
                     {
-                        foreach (var item in products)
+                        foreach (var item in Model.Products)
                         {
                             <tr>
                                 <td>@item.Name</td>

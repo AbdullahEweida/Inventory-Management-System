@@ -1,0 +1,179 @@
+﻿@model InventoryApp.Models.Product
+
+<div class="container mt-4">
+
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold">Order Product</h2>
+            <p class="text-muted mb-0">
+                Create a purchase order for this product
+            </p>
+        </div>
+
+        <a asp-controller="Products"
+           asp-action="Index"
+           class="btn btn-outline-secondary">
+            Back to Products
+        </a>
+    </div>
+
+    <!-- Product Information Card -->
+    <div class="card shadow-sm border-0 mb-4">
+
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Product Information</h5>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <!-- Product Name -->
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-bold">
+                        Product Name
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           value="@Model.Name"
+                           readonly />
+                </div>
+
+                <!-- SKU -->
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-bold">
+                        SKU
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           value="@Model.SKU"
+                           readonly />
+                </div>
+
+                <!-- Category -->
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-bold">
+                        Category
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           value="@Model.Category?.Name"
+                           readonly />
+                </div>
+
+                <!-- Unit Price -->
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-bold">
+                        Unit Price
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           value="@Model.UnitPrice"
+                           readonly />
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Order Information -->
+    <div class="card shadow-sm border-0 mb-4">
+
+        <div class="card-header">
+            <h5 class="mb-0">Order Information</h5>
+        </div>
+
+        <div class="card-body">
+
+            <form asp-controller="Purchase"
+                  asp-action="OrderProduct"
+                  method="post">
+
+                @Html.AntiForgeryToken()
+
+                <!-- Product ID -->
+                <input type="hidden"
+                       name="productId"
+                       value="@Model.ID" />
+
+
+                <div class="row">
+
+                    <!-- Supplier -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label fw-bold">
+                            Supplier
+                        </label>
+
+                        <select name="supplierId"
+                                class="form-select"
+                                required>
+
+                            <option value="">
+                                -- Select Supplier --
+                            </option>
+
+                            @if (ViewBag.Suppliers != null)
+                            {
+                                foreach (var supplier in ViewBag.Suppliers)
+                                {
+                                    <option value="@supplier.ID">
+                                        @supplier.Name
+                                    </option>
+                                }
+                            }
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Quantity -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label fw-bold">
+                            Quantity
+                        </label>
+
+                        <input type="number"
+                               name="quantity"
+                               min="1"
+                               value="1"
+                               class="form-control"
+                               required />
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="d-flex justify-content-end gap-2 mt-3">
+
+                    <a asp-controller="Products"
+                       asp-action="Index"
+                       class="btn btn-secondary rounded-pill">
+                        Cancel
+                    </a>
+
+                    <button type="submit"
+                            class="btn btn-primary rounded-pill">
+                        Confirm Order
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

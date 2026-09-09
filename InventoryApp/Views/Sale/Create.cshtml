@@ -84,7 +84,7 @@
                 </h5>
 
                 <button type="button"
-                        class="btn btn-success btn-sm"
+                        class="btn btn-success rounded-pill btn-sm"
                         onclick="addItem()">
                     + Add Product
                 </button>
@@ -95,9 +95,8 @@
 
                 <div class="table-responsive">
 
-                    <table class="table table-bordered align-middle">
-
-                        <thead class="table-dark">
+                    <table class="table table-hover table-borderless align-middle text-nowrap mb-0" id="stockTable">
+                        <thead class="table-light border-bottom">
 
                             <tr>
                                 <th>Product</th>
@@ -163,12 +162,12 @@
         <div class="d-flex justify-content-end gap-2">
 
             <a asp-action="Index"
-               class="btn btn-secondary">
+               class="btn btn-secondary rounded-pill">
                 Cancel
             </a>
 
             <button type="submit"
-                    class="btn btn-primary">
+                    class="btn btn-primary rounded-pill">
                 Create Sale
             </button>
 

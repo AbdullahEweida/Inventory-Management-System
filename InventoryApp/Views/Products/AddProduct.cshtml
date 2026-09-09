@@ -27,7 +27,7 @@
 
                 <div class="mb-3">
                     <label asp-for="CategoryID" class="form-label">Category</label>
-                    <select asp-for="CategoryID" asp-items="ViewBag.Categories" class="form-select">
+                    <select asp-for="CategoryID" asp-items="Model.CategoriesList" class="form-select">
                         <option value="">Select Category </option>
                     </select>
                     <span asp-validation-for="CategoryID" class="text-danger"></span>
@@ -40,11 +40,6 @@
                         <span asp-validation-for="UnitPrice" class="text-danger"></span>
                     </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label asp-for="StockQuantity" class="form-label">Stock Quantity</label>
-                        <input asp-for="StockQuantity" type="number" class="form-control" />
-                        <span asp-validation-for="StockQuantity" class="text-danger"></span>
-                    </div>
                 </div>
 
                 <div class="mb-3">
@@ -54,8 +49,8 @@
                 </div>
 
                 <div class="d-flex justify-content-between mt-4">
-                    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-                    <button type="submit" class="btn btn-primary">Save Product</button>
+                    <a asp-action="Index" class="btn btn-secondary rounded-pill">Cancel</a>
+                    <button type="submit" class="btn btn-primary rounded-pill">Save Product</button>
                 </div>
             </form>
         </div>

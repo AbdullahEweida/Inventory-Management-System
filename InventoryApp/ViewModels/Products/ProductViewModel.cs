@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace InventoryApp.ViewModels.Products
 {
@@ -17,8 +18,7 @@ namespace InventoryApp.ViewModels.Products
         [Range(0.01, 999999999999999.99, ErrorMessage = "Unit Price must be greater than 0")]
         public decimal UnitPrice { get; set; }
 
-        [Required(ErrorMessage = "Stock Quantity is required")]
-        [Range(1, int.MaxValue, ErrorMessage = "Stock quantity must be greater than 0")]
+       
         public int StockQuantity { get; set; }
 
         [Required(ErrorMessage = "Low stock threshold is required")]
@@ -28,5 +28,7 @@ namespace InventoryApp.ViewModels.Products
         public Guid? CategoryID { get; set; }
         public string? CategoryName { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        public List<SelectListItem> CategoriesList { get; set; } = new List<SelectListItem>();
     }
 }

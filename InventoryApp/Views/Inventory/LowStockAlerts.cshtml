@@ -66,8 +66,13 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent border-0 pb-3 text-center">
-                            <button class="btn btn-outline-dark btn-sm rounded-pill px-4">
-                                 <a class="text-decoration-none text-dark" asp-controller="Products" asp-action="Edit" asp-route-id="@item.ID">Order Now</a>
+                            <button class="btn btn-sm rounded-pill px-4">
+                                <a asp-controller="Purchase"
+                                   asp-action="OrderProduct"
+                                   asp-route-productId="@item.ID"
+                                   class="btn btn-warning rounded-pill">
+                                    Order Now
+                                </a>
                             </button>
                         </div>
                     </div>
