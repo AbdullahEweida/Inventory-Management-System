@@ -24,6 +24,8 @@ namespace InventoryApp.Services
             _db = db;
             _configuration = configuration;
             _httpClient = httpClient;
+            
+
         }
 
         public async Task<string> AnalyzeInventoryAsync()

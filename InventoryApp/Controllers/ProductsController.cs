@@ -134,8 +134,28 @@ namespace InventoryApp.Controllers
 
         // Add - POST
         [HttpPost]
+        // Add - POST
+        [HttpPost]
         public IActionResult Add(ProductViewModel viewModel)
         {
+            // Check if product name already exists
+            if (context.Products.Any(p => p.Name.ToLower() == viewModel.Name.ToLower()))
+            {
+                ModelState.AddModelError(
+                    "Name",
+                    "A product with this name already exists."
+                );
+            }
+
+            // Check if SKU already exists
+            if (context.Products.Any(p => p.SKU.ToLower() == viewModel.SKU.ToLower()))
+            {
+                ModelState.AddModelError(
+                    "SKU",
+                    "A product with this SKU already exists."
+                );
+            }
+
             if (!ModelState.IsValid)
             {
                 viewModel.CategoriesList = GetCategoriesDropdown(viewModel.CategoryID);
@@ -150,18 +170,22 @@ namespace InventoryApp.Controllers
                     Name = viewModel.Name,
                     SKU = viewModel.SKU,
                     UnitPrice = viewModel.UnitPrice,
-                 
                     LowStockThreshold = viewModel.LowStockThreshold,
                     CategoryID = viewModel.CategoryID!.Value
                 };
 
                 context.Products.Add(product);
                 context.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             catch
             {
-                ModelState.AddModelError("", "An error occurred while saving the product.");
+                ModelState.AddModelError(
+                    "",
+                    "An error occurred while saving the product."
+                );
+
                 viewModel.CategoriesList = GetCategoriesDropdown(viewModel.CategoryID);
                 return View("AddProduct", viewModel);
             }
@@ -228,22 +252,10 @@ namespace InventoryApp.Controllers
         }
 
         // Delete - GET (عادة يفضل استدعاء صفحة تأكيد الحذف بدلاً من الحذف المباشر في GET)
-        [HttpGet]
-        public IActionResult Delete(Guid id)
-        {
-            var product = context.Products.Find(id);
-            if (product != null)
-            {
-                context.Products.Remove(product);
-                context.SaveChanges();
-            }
-
-            return RedirectToAction("Index");
-        }
-
-        // Delete - POST
+        
         [HttpPost]
         [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(Guid id)
         {
             var product = context.Products.Find(id);
@@ -252,18 +264,29 @@ namespace InventoryApp.Controllers
             {
                 return NotFound();
             }
+            bool isInPurchase = context.Purchases_Items
+                           .Any(x => x.ProductID == id);
 
-            try
+            // Check if product is used in any sale
+            bool isInSale = context.Sales_Items
+                .Any(x => x.ProductID == id);
+
+            if (isInPurchase || isInSale)
             {
-                context.Products.Remove(product);
-                context.SaveChanges();
-                return RedirectToAction("Index");
+                TempData["Error"] =
+                    "Cannot delete this product because it is  already used .";
+
+                return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                ModelState.AddModelError("", "An error occurred while deleting the product.");
-                return View("DeleteProduct");
-            }
+
+            context.Products.Remove(product);
+            context.SaveChanges();
+
+
+            TempData["Success"] =
+                "Product deleted successfully.";
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

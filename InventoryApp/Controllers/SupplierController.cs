@@ -46,49 +46,76 @@ namespace InventoryApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Supplier sup)
         {
+            // Check if supplier name already exists
+            bool nameExists = await _db.Suppliers
+                .AnyAsync(s => s.Name == sup.Name);
+
+            if (nameExists)
+            {
+                ModelState.AddModelError(
+                    nameof(sup.Name),
+                    "This supplier name already exists."
+                );
+            }
+
             if (ModelState.IsValid)
             {
                 await _db.Suppliers.AddAsync(sup);
                 await _db.SaveChangesAsync();
+
                 return RedirectToAction("Index");
             }
+
             return View(sup);
         }
-        public async Task<IActionResult> Details(Guid id)
-        {
-            var sup =  await _db.Suppliers.
-                Include(s => s.Purchases).
-                ThenInclude(p => p.PurchaseItems).
-                ThenInclude(p => p.Product).
-                FirstOrDefaultAsync(s => s.ID == id);
-            
-            if (sup == null)
-            {
-                return NotFound();
-            }
-            return View(sup);
-        }
+
+
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(Guid id)
         {
-            Supplier? sup = await _db.Suppliers.FirstOrDefaultAsync(s => s.ID == id);
-            if (sup != null)
-            {
-                _db.Suppliers.Remove(sup);
-                await _db.SaveChangesAsync();
+            Supplier? sup = await _db.Suppliers
+                .FirstOrDefaultAsync(s => s.ID == id);
 
-                TempData["DeleteSuccess"] = "Delete Successful!";
-            }
-            return RedirectToAction("Index");
-        }
-        public async Task<IActionResult> Edit(Guid id)
-        {
-            Supplier? sup = await _db.Suppliers.FirstOrDefaultAsync(s => s.ID == id);
             if (sup == null)
             {
                 return NotFound();
             }
+
+            bool isInPurchase = await _db.Purchases
+                .AnyAsync(p => p.SupplierID == id);
+
+            if (isInPurchase)
+            {
+                TempData["Error"] =
+                    "This supplier cannot be deleted because it is currently in use.";
+
+                return RedirectToAction("Index");
+            }
+
+            _db.Suppliers.Remove(sup);
+            await _db.SaveChangesAsync();
+
+            TempData["Success"] =
+                "Supplier deleted successfully.";
+
+            return RedirectToAction("Index");
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(Guid id)
+        {
+            var sup = await _db.Suppliers
+                .FirstOrDefaultAsync(s => s.ID == id);
+
+            if (sup == null)
+            {
+                return NotFound();
+            }
+
             return View(sup);
         }
         [HttpPost]
@@ -101,6 +128,21 @@ namespace InventoryApp.Controllers
                 await _db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+            return View(sup);
+        }
+
+        // Details
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var sup = await _db.Suppliers
+                .Include(s => s.Purchases)
+                .FirstOrDefaultAsync(s => s.ID == id);
+
+            if (sup == null)
+            {
+                return NotFound();
+            }
+
             return View(sup);
         }
     }

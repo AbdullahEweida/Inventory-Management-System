@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using Microsoft.EntityFrameworkCore;
 namespace InventoryApp.Models
 {
+    [Index(nameof(Name), IsUnique =true)]
+    [Index(nameof(SKU), IsUnique = true)]
     public class Product
     {
         [Key]
