@@ -131,11 +131,12 @@ namespace InventoryApp.Controllers
             return View(sup);
         }
 
-        // Details
         public async Task<IActionResult> Details(Guid id)
         {
             var sup = await _db.Suppliers
                 .Include(s => s.Purchases)
+                    .ThenInclude(p => p.PurchaseItems)
+                        .ThenInclude(pi => pi.Product)
                 .FirstOrDefaultAsync(s => s.ID == id);
 
             if (sup == null)
