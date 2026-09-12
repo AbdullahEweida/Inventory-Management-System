@@ -205,6 +205,7 @@ The response MUST perfectly match this JSON structure:
 """;          
                 var requestBody = new
                 {
+                    //more stable version
                     model = "gemini-3.6-flash",
                     input = prompt
                 };
