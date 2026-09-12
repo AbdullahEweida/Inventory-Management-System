@@ -1,4 +1,4 @@
-﻿@model IEnumerable<InventoryApp.Models.Product>
+@model IEnumerable<InventoryApp.Models.Product>
 
 @{
     ViewData["Title"] = "Real-Time Stock Tracking";
@@ -62,7 +62,7 @@
                             
                             if (item.StockQuantity <= item.LowStockThreshold)
                             {
-                                healthPercentage = (item.StockQuantity > 0) ? (item.StockQuantity * 100) / item.LowStockThreshold : 5;
+                                healthPercentage = (item.StockQuantity > 0) ? Math.Min(100, (item.StockQuantity * 100) / Math.Max(1, item.LowStockThreshold)) : 5;
                                 barColor = "bg-danger progress-bar-striped progress-bar-animated";
                                 statusText = "Critical";
                             }
@@ -75,7 +75,7 @@
 
                             <tr class="border-bottom">
                                 <td class="ps-4 text-muted fw-semibold">
-                                    <span class="bg-light px-2 py-1 rounded border">@item.SKU</span>
+                                    <span class="bg-light px-2 py-1 rounded border">@(string.IsNullOrWhiteSpace(item.SKU) ? "N/A" : item.SKU)</span>
                                 </td>
                                 <td>
                                     <div class="fw-bold text-dark fs-6">@item.Name</div>

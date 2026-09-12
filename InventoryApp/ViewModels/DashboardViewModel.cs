@@ -9,6 +9,7 @@ namespace InventoryApp.ViewModels
         public int TotalSuppliers { get; set; }
         public int TotalStockQuantity { get; set; }
         public int LowStockProductsCount { get; set; }
+        public int OutOfStockProductsCount { get; set; }
 
         public int TotalPurchasesCount { get; set; }
         public decimal TotalPurchasesAmount { get; set; }

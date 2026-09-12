@@ -1,4 +1,4 @@
-﻿
+
 using InventoryApp.DataAccess;
 using InventoryApp.Models;
 using InventoryApp.ViewModels;
@@ -52,11 +52,20 @@ namespace InventoryApp.Controllers
             return View("AddCategory");
         }
 
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Add(CategoryViewModel model)
         {
+            // Check if category name already exists
+            if (!string.IsNullOrWhiteSpace(model.Name) && context.Categories.Any(c => c.Name.ToLower() == model.Name.ToLower()))
+            {
+                ModelState.AddModelError(
+                    "Name",
+                    "A category with this name already exists."
+                );
+            }
+
             if (ModelState.IsValid)
             {
                 var category = new Category
@@ -68,6 +77,7 @@ namespace InventoryApp.Controllers
 
                 context.Categories.Add(category);
                 context.SaveChanges();
+
                 return RedirectToAction(nameof(Index));
             }
 
@@ -119,42 +129,35 @@ namespace InventoryApp.Controllers
 
 
         // Delete
-        [HttpGet]
-        public IActionResult Delete(Guid id)
-        {
-            var category = context.Categories.Find(id);
-            if (category != null)
-            {
-                context.Categories.Remove(category);
-                context.SaveChanges();
-            }
+       
 
-            return RedirectToAction("Index");
-        }
-
-        
         [HttpPost]
         [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(Guid id)
         {
-            var category = context.Categories.Find(id);
+            var category = context.Categories
+                .Include(c => c.Products)
+                .FirstOrDefault(c => c.ID == id);
 
             if (category == null)
             {
                 return NotFound();
             }
 
-            try
+            // Check if category has products
+            if (category.Products != null && category.Products.Any())
             {
-                context.Categories.Remove(category);
-                context.SaveChanges();
-                return RedirectToAction("Index");
+                TempData["Error"] = "Cannot delete this category because it contains products.";
+                return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                ModelState.AddModelError("", "An error occurred while deleting the Category.");
-                return View("DeleteCategory");
-            }
+
+            context.Categories.Remove(category);
+            context.SaveChanges();
+
+            TempData["Success"] = "Category deleted successfully.";
+
+            return RedirectToAction(nameof(Index));
         }
 
 

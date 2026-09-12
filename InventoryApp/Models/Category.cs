@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace InventoryApp.Models
 {
+    [Index(nameof(Name), IsUnique = true)]
     public class Category
     {
         [Key]
@@ -13,6 +15,6 @@ namespace InventoryApp.Models
         [MaxLength(100, ErrorMessage = "Description cannot exceed 100 characters")]
         public string Description { get; set; }
         // navigation property
-        public List<Product> Products { get; set; }
+        public List<Product> Products { get; set; } = new();
     }
 }

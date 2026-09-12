@@ -47,6 +47,11 @@ namespace InventoryApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PurchaseCreateViewModel model)
         {
+            if (model.Items == null || model.Items.Count == 0)
+            {
+                ModelState.AddModelError(nameof(model.Items), "Add at least one product to the purchase.");
+            }
+
             if (!ModelState.IsValid)
             {
                 ViewBag.Suppliers = await _db.Suppliers
@@ -138,9 +143,10 @@ namespace InventoryApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> OrderProduct(
-            Guid productId,
-            Guid supplierId,
-            int quantity)
+       Guid productId,
+       Guid supplierId,
+       int quantity,
+       decimal unitprice)
         {
             // Get product
             var product = await _db.Products
@@ -175,24 +181,38 @@ namespace InventoryApp.Controllers
                 return View(product);
             }
 
-            // Create Purchase / Invoice
+            // Validate unit price
+            if (unitprice <= 0)
+            {
+                ModelState.AddModelError(
+                    "",
+                    "Unit Price must be greater than 0."
+                );
+
+                ViewBag.Suppliers = await _db.Suppliers
+                    .OrderBy(s => s.Name)
+                    .ToListAsync();
+
+                return View(product);
+            }
+
+            // Create Purchase
             var purchase = new Purchase
             {
-                
-                     Id = Guid.NewGuid(),
+                Id = Guid.NewGuid(),
                 Date = DateTime.UtcNow,
                 SupplierID = supplierId,
                 PurchaseItems = new List<Purchase_Item>()
             };
 
-            // Add product to invoice
+            // Add product to purchase
             var purchaseItem = new Purchase_Item
             {
                 ID = Guid.NewGuid(),
                 PurchaseID = purchase.Id,
                 ProductID = product.ID,
                 Quantity = quantity,
-                UnitPrice = product.UnitPrice
+                UnitPrice = unitprice
             };
 
             purchase.PurchaseItems.Add(purchaseItem);
@@ -200,16 +220,18 @@ namespace InventoryApp.Controllers
             // Increase stock
             product.StockQuantity += quantity;
 
-            // Save purchase
+            // Update product price
+            product.UnitPrice = unitprice;
+
+            // Save
             _db.Purchases.Add(purchase);
 
             await _db.SaveChangesAsync();
 
-            // Open invoice details
             return RedirectToAction(
-     nameof(Details),
-     new { id = purchase.Id }
- );
+                nameof(Details),
+                new { id = purchase.Id }
+            );
         }
 
         // Display purchase details

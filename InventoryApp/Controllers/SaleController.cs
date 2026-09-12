@@ -42,6 +42,11 @@ namespace InventoryApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(SaleCreateViewModel model)
         {
+            if (model.Items == null || model.Items.Count == 0)
+            {
+                ModelState.AddModelError(nameof(model.Items), "Add at least one product to the sale.");
+            }
+
             if (!ModelState.IsValid)
             {
                 ViewBag.Products = await _db.Products

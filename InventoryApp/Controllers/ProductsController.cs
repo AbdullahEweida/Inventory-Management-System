@@ -1,4 +1,4 @@
-﻿using InventoryApp.DataAccess;
+using InventoryApp.DataAccess;
 using InventoryApp.Models;
 using InventoryApp.ViewModels.Products;
 using Microsoft.AspNetCore.Mvc;
@@ -30,15 +30,16 @@ namespace InventoryApp.Controllers
         }
 
         // Index
-        public IActionResult Index(string searchString, Guid? categoryId, string stockStatus, int page = 1)
+        public IActionResult Index(string? searchString, Guid? categoryId, string? stockStatus, int page = 1)
         {
             int pageSize = 10;
+            if (page < 1) page = 1;
             var query = context.Products.Include(p => p.Category).AsQueryable();
 
             // الفلترة
             if (!string.IsNullOrEmpty(searchString))
             {
-                query = query.Where(p => p.Name.Contains(searchString) || p.SKU.Contains(searchString));
+                query = query.Where(p => p.Name.Contains(searchString) || (p.SKU != null && p.SKU.Contains(searchString)));
             }
 
             if (categoryId.HasValue && categoryId.Value != Guid.Empty)
@@ -133,9 +134,34 @@ namespace InventoryApp.Controllers
         }
 
         // Add - POST
+        // Add - POST
         [HttpPost]
         public IActionResult Add(ProductViewModel viewModel)
         {
+            // Validate category selection
+            if (!viewModel.CategoryID.HasValue || viewModel.CategoryID == Guid.Empty)
+            {
+                ModelState.AddModelError(nameof(viewModel.CategoryID), "Please select a category.");
+            }
+
+            // Check if product name already exists
+            if (!string.IsNullOrWhiteSpace(viewModel.Name) && context.Products.Any(p => p.Name.ToLower() == viewModel.Name.ToLower()))
+            {
+                ModelState.AddModelError(
+                    "Name",
+                    "A product with this name already exists."
+                );
+            }
+
+            // Check if SKU already exists (only when supplied)
+            if (!string.IsNullOrWhiteSpace(viewModel.SKU) && context.Products.Any(p => p.SKU != null && p.SKU.ToLower() == viewModel.SKU.ToLower()))
+            {
+                ModelState.AddModelError(
+                    "SKU",
+                    "A product with this SKU already exists."
+                );
+            }
+
             if (!ModelState.IsValid)
             {
                 viewModel.CategoriesList = GetCategoriesDropdown(viewModel.CategoryID);
@@ -150,18 +176,22 @@ namespace InventoryApp.Controllers
                     Name = viewModel.Name,
                     SKU = viewModel.SKU,
                     UnitPrice = viewModel.UnitPrice,
-                 
                     LowStockThreshold = viewModel.LowStockThreshold,
                     CategoryID = viewModel.CategoryID!.Value
                 };
 
                 context.Products.Add(product);
                 context.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             catch
             {
-                ModelState.AddModelError("", "An error occurred while saving the product.");
+                ModelState.AddModelError(
+                    "",
+                    "An error occurred while saving the product."
+                );
+
                 viewModel.CategoriesList = GetCategoriesDropdown(viewModel.CategoryID);
                 return View("AddProduct", viewModel);
             }
@@ -195,8 +225,24 @@ namespace InventoryApp.Controllers
 
         // Edit - POST
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(ProductViewModel viewModel)
         {
+            if (!viewModel.CategoryID.HasValue || viewModel.CategoryID == Guid.Empty)
+            {
+                ModelState.AddModelError(nameof(viewModel.CategoryID), "Please select a category.");
+            }
+
+            if (!string.IsNullOrWhiteSpace(viewModel.Name) && context.Products.Any(p => p.Name.ToLower() == viewModel.Name.ToLower() && p.ID != viewModel.Id))
+            {
+                ModelState.AddModelError(nameof(viewModel.Name), "A product with this name already exists.");
+            }
+
+            if (!string.IsNullOrWhiteSpace(viewModel.SKU) && context.Products.Any(p => p.SKU != null && p.SKU.ToLower() == viewModel.SKU.ToLower() && p.ID != viewModel.Id))
+            {
+                ModelState.AddModelError(nameof(viewModel.SKU), "A product with this SKU already exists.");
+            }
+
             if (!ModelState.IsValid)
             {
                 viewModel.CategoriesList = GetCategoriesDropdown(viewModel.CategoryID);
@@ -228,22 +274,10 @@ namespace InventoryApp.Controllers
         }
 
         // Delete - GET (عادة يفضل استدعاء صفحة تأكيد الحذف بدلاً من الحذف المباشر في GET)
-        [HttpGet]
-        public IActionResult Delete(Guid id)
-        {
-            var product = context.Products.Find(id);
-            if (product != null)
-            {
-                context.Products.Remove(product);
-                context.SaveChanges();
-            }
-
-            return RedirectToAction("Index");
-        }
-
-        // Delete - POST
+        
         [HttpPost]
         [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(Guid id)
         {
             var product = context.Products.Find(id);
@@ -252,18 +286,29 @@ namespace InventoryApp.Controllers
             {
                 return NotFound();
             }
+            bool isInPurchase = context.Purchases_Items
+                           .Any(x => x.ProductID == id);
 
-            try
+            // Check if product is used in any sale
+            bool isInSale = context.Sales_Items
+                .Any(x => x.ProductID == id);
+
+            if (isInPurchase || isInSale)
             {
-                context.Products.Remove(product);
-                context.SaveChanges();
-                return RedirectToAction("Index");
+                TempData["Error"] =
+                    "Cannot delete this product because it is  already used .";
+
+                return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                ModelState.AddModelError("", "An error occurred while deleting the product.");
-                return View("DeleteProduct");
-            }
+
+            context.Products.Remove(product);
+            context.SaveChanges();
+
+
+            TempData["Success"] =
+                "Product deleted successfully.";
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

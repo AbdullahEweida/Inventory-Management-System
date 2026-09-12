@@ -15,7 +15,7 @@ namespace InventoryApp.Models
         public Guid SupplierID { get; set; }
         // navigation property
         public Supplier Supplier { get; set; }
-        public List<Purchase_Item> PurchaseItems { get; set; }
+        public List<Purchase_Item> PurchaseItems { get; set; } = new();
         //derived Attribute
         [NotMapped]
         public decimal TotalPrice {

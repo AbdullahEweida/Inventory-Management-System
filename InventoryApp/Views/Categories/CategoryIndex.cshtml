@@ -1,8 +1,11 @@
-﻿@model InventoryApp.ViewModels.CategoryIndexViewModel
+@model InventoryApp.ViewModels.CategoryIndexViewModel
 
 @{
     ViewData["Title"] = "Category Management";
 }
+
+
+
 
 <div class="container-fluid mt-4">
 
@@ -49,9 +52,18 @@
                                     </li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li>
-                                        <a class="dropdown-menu-item dropdown-item text-danger" asp-action="Delete" asp-route-id="@item.Id">
-                                            <i class="bi bi-trash me-2"></i> Delete
-                                        </a>
+                                        <form asp-action="Delete"
+                                              asp-route-id="@item.Id"
+                                              method="post">
+
+                                            @Html.AntiForgeryToken()
+
+                                            <button type="submit"
+                                                    class="dropdown-item text-danger">
+                                                <i class="bi bi-trash me-2"></i> Delete
+                                            </button>
+
+                                        </form>
                                     </li>
                                 </ul>
                             </div>
@@ -67,7 +79,6 @@
             }
         </tbody>
     </table>
-    </div>
 
 
     @if (Model != null && Model.TotalPages > 1)
@@ -92,3 +103,44 @@
         </nav>
     }
 </div>
+
+                        
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if (TempData["Error"] != null)
+    {
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Cannot Delete',
+                    text: '@TempData["Error"]',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+            });
+        </script>
+    }
+
+    @if (TempData["Success"] != null)
+    {
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Success',
+                    text: '@TempData["Success"]',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+            });
+        </script>
+    }
+}
