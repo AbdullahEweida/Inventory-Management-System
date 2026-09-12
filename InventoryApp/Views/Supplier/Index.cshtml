@@ -1,4 +1,4 @@
-﻿@model IEnumerable<InventoryApp.Models.Supplier>
+@model IEnumerable<InventoryApp.Models.Supplier>
 
 @{
     ViewData["Title"] = "Suppliers List";
@@ -87,49 +87,43 @@
             </ul>
         </nav>
     }
+        </div>
+    </div>
 </div>
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    @if (TempData["DeleteSuccess"] != null)
+    @if (TempData["Error"] != null)
     {
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Cannot Delete',
+                    text: '@TempData["Error"]',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+            });
+        </script>
+    }
+
+    @if (TempData["Success"] != null)
+    {
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
                 Swal.fire({
                     toast: true,
                     position: 'top-end',
                     icon: 'success',
-                    title: '@TempData["DeleteSuccess"]',
+                    title: 'Success',
+                    text: '@TempData["Success"]',
                     showConfirmButton: false,
-                    timer: 2500,
-                    timerProgressBar: true,
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInRight'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutRight'
-                    }
-                });
-            });
-        </script>
-         <script>
-            document.querySelectorAll('.delete-form').forEach(form => {
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault(); 
-            
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#dc3545',
-                        cancelButtonColor: '#6c757d',
-                        confirmButtonText: 'Yes, delete it!'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            form.submit();
-                        }
-                    });
+                    timer: 3000,
+                    timerProgressBar: true
                 });
             });
         </script>

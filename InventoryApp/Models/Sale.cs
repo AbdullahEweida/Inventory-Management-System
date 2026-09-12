@@ -13,11 +13,11 @@ namespace InventoryApp.Models
         [MaxLength(100, ErrorMessage = "Customer info must be less than 100 characters")]
         public string CustomerInfo { get; set; }
         // navigating prop
-        public List<Sale_Item> Sale_Items { get; set; }
+        public List<Sale_Item> Sale_Items { get; set; } = new();
         // derived prop
         [NotMapped]
         public decimal TotalAmount { get { 
-                if(!Sale_Items.Any() || Sale_Items is null) return 0;
+                if(Sale_Items is null || !Sale_Items.Any()) return 0;
                 return Sale_Items.Sum(x => x.Quantity * x.UnitCost);
             } 
         }

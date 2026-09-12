@@ -1,4 +1,4 @@
-﻿using InventoryApp.DataAccess;
+using InventoryApp.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using System.Text.Json;
@@ -24,6 +24,8 @@ namespace InventoryApp.Services
             _db = db;
             _configuration = configuration;
             _httpClient = httpClient;
+            
+
         }
 
         public async Task<string> AnalyzeInventoryAsync()
@@ -31,7 +33,8 @@ namespace InventoryApp.Services
             try
             {
                 // Get Gemini API key from configuration
-                var apiKey = _configuration["Gemini:ApiKey"];
+                var apiKey = _configuration["Gemini:ApiKey"]
+                    ?? Environment.GetEnvironmentVariable("GEMINI_API_KEY");
 
                 // Make sure the API key exists
                 if (string.IsNullOrWhiteSpace(apiKey))
@@ -202,7 +205,8 @@ The response MUST perfectly match this JSON structure:
 """;          
                 var requestBody = new
                 {
-                    model = "gemini-3.8-flash",
+                    //more stable version
+                    model = "gemini-3.6-flash",
                     input = prompt
                 };
 

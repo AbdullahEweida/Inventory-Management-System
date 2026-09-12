@@ -1,4 +1,4 @@
-using InventoryApp.DataAccess;
+﻿using InventoryApp.DataAccess;
 using InventoryApp.Models;
 using InventoryApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -74,7 +74,9 @@ namespace InventoryApp.Controllers
                     .SumAsync(product => (int?)product.StockQuantity) ?? 0,
 
                 LowStockProductsCount = await _context.Products
-                    .CountAsync(product => product.StockQuantity <= product.LowStockThreshold),
+                    .CountAsync(product => product.StockQuantity > 0 && product.StockQuantity <= product.LowStockThreshold),
+                OutOfStockProductsCount = await _context.Products
+                    .CountAsync(product => product.StockQuantity <= 0),
 
                 TotalPurchasesCount = await _context.Purchases.CountAsync(),
                 TotalPurchasesAmount = await _context.Purchases_Items

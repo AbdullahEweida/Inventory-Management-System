@@ -2,440 +2,200 @@
 
 @{
     ViewData["Title"] = "Dashboard";
+    var recent = Model.RecentActivities.Take(5).ToList();
+    var salesProducts = Model.MostSoldProducts.Take(5).ToList();
+    var outOfStockCount = Math.Max(Model.OutOfStockProductsCount, 0);
+    var lowStockCount = Math.Max(Model.LowStockProductsCount, 0);
+    var inStockCount = Math.Max(Model.TotalProducts - lowStockCount - outOfStockCount, 0);
+    var lowStockPercent = Model.TotalProducts > 0 ? (double)lowStockCount / Model.TotalProducts * 100 : 0;
+    var outOfStockPercent = Model.TotalProducts > 0 ? (double)outOfStockCount / Model.TotalProducts * 100 : 0;
+    var inStockPercent = Math.Max(0, 100 - lowStockPercent - outOfStockPercent);
 }
 
-<style>
-    .dashboard-page {
-        background: #f5f7fb;
-        min-height: 100vh;
-        padding: 32px 0 50px;
-    }
-
-    .dashboard-title {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #16213e;
-        margin-bottom: 4px;
-    }
-
-    .dashboard-subtitle {
-        color: #6b7280;
-        margin: 0;
-    }
-
-    .dashboard-date {
-        color: #64748b;
-        font-size: 0.9rem;
-    }
-
-    .stat-card {
-        border: 0;
-        border-radius: 18px;
-        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-        height: 100%;
-        overflow: hidden;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .stat-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-    }
-
-    .stat-card .card-body {
-        padding: 22px;
-    }
-
-    .stat-label {
-        color: #64748b;
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-
-    .stat-value {
-        color: #172554;
-        font-size: 1.8rem;
-        font-weight: 800;
-        margin: 0;
-    }
-
-    .stat-icon {
-        width: 54px;
-        height: 54px;
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.45rem;
-    }
-
-    .icon-blue { background: #e0ecff; color: #2563eb; }
-    .icon-purple { background: #f0e7ff; color: #7c3aed; }
-    .icon-orange { background: #fff0dd; color: #ea580c; }
-    .icon-cyan { background: #dff8fa; color: #0891b2; }
-    .icon-red { background: #ffe4e6; color: #e11d48; }
-    .icon-green { background: #dcfce7; color: #16a34a; }
-
-    .summary-card {
-        border: 0;
-        border-radius: 18px;
-        overflow: hidden;
-        height: 100%;
-        color: white;
-        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-    }
-
-    .purchase-card {
-        background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    }
-
-    .sales-card {
-        background: linear-gradient(135deg, #16a34a, #15803d);
-    }
-
-    .summary-card .card-body {
-        padding: 24px;
-    }
-
-    .summary-card .summary-title {
-        opacity: 0.88;
-        margin-bottom: 10px;
-        font-weight: 600;
-    }
-
-    .summary-card .summary-value {
-        font-size: 2rem;
-        font-weight: 800;
-        margin: 0;
-    }
-
-    .summary-card .summary-note {
-        opacity: 0.85;
-        font-size: 0.88rem;
-        margin: 6px 0 0;
-    }
-
-    .dashboard-panel {
-        border: 0;
-        border-radius: 18px;
-        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-        overflow: hidden;
-        height: 100%;
-    }
-
-    .dashboard-panel .card-header {
-        background: white;
-        border-bottom: 1px solid #edf0f5;
-        padding: 18px 22px;
-    }
-
-    .panel-title {
-        color: #1e293b;
-        font-size: 1.05rem;
-        font-weight: 750;
-        margin: 0;
-    }
-
-    .panel-subtitle {
-        color: #94a3b8;
-        font-size: 0.82rem;
-        margin: 4px 0 0;
-    }
-
-    .dashboard-panel .card-body {
-        padding: 0;
-    }
-
-    .dashboard-table {
-        margin-bottom: 0;
-    }
-
-    .dashboard-table thead th {
-        background: #f8fafc;
-        color: #64748b;
-        border-bottom: 1px solid #edf0f5;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.03em;
-        padding: 13px 18px;
-        text-transform: uppercase;
-    }
-
-    .dashboard-table tbody td {
-        border-color: #f1f5f9;
-        color: #334155;
-        padding: 15px 18px;
-        vertical-align: middle;
-    }
-
-    .activity-badge {
-        border-radius: 20px;
-        font-size: 0.74rem;
-        font-weight: 700;
-        padding: 6px 10px;
-    }
-
-    .empty-state {
-        color: #94a3b8;
-        padding: 46px 20px;
-        text-align: center;
-        margin: 0;
-    }
-
-    .empty-state i {
-        display: block;
-        font-size: 2rem;
-        margin-bottom: 12px;
-    }
-
-    @@media (max-width: 767.98px) {
-        .dashboard-page {
-            padding-top: 20px;
-        }
-
-        .dashboard-title {
-            font-size: 1.65rem;
-        }
-    }
-</style>
-
 <div class="dashboard-page">
-    <div class="container">
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+    <div class="dashboard-wrap">
+        <div class="dashboard-head">
             <div>
-                <h1 class="dashboard-title">Inventory Dashboard</h1>
-                <p class="dashboard-subtitle">A real-time overview of your stock, purchasing, and sales performance.</p>
+                <h1 class="dashboard-title">Dashboard</h1>
+                <p class="dashboard-subtitle">Here's what's happening with your inventory today.</p>
             </div>
-
-            <div class="dashboard-date mt-3 mt-md-0">
-                <i class="bi bi-calendar3 me-1"></i>
-                @DateTime.Now.ToString("dddd, dd MMMM yyyy")
-            </div>
+            <div class="dashboard-date"><i class="bi bi-calendar3"></i>@DateTime.Now.ToString("MMM dd, yyyy") <span>–</span> @DateTime.Now.AddDays(6).ToString("MMM dd, yyyy") <i class="bi bi-chevron-down"></i></div>
         </div>
 
-        <div class="row g-4 mb-4">
-            <div class="col-sm-6 col-lg-3">
-                <div class="card stat-card">
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <div>
-                            <p class="stat-label">Total Products</p>
-                            <h2 class="stat-value">@Model.TotalProducts</h2>
-                        </div>
-                        <div class="stat-icon icon-blue">
-                            <i class="bi bi-box-seam"></i>
-                        </div>
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-copy">
+                    <p class="stat-label">Total Products</p>
+                    <h2 class="stat-value">@Model.TotalProducts.ToString("N0")</h2>
+                    <div class="stat-trend up"><i class="bi bi-arrow-up"></i> Active <span class="muted">inventory items</span></div>
+                </div>
+                <span class="stat-icon icon-blue"><i class="bi bi-box-seam"></i></span>
+            </article>
+            <article class="stat-card">
+                <div class="stat-copy">
+                    <p class="stat-label">Total Sales</p>
+                    <h2 class="stat-value">@Model.TotalSalesRevenue.ToString("C0")</h2>
+                    <div class="stat-trend up"><i class="bi bi-arrow-up"></i> @Model.TotalSalesCount <span class="muted">transactions</span></div>
+                </div>
+                <span class="stat-icon icon-green"><i class="bi bi-cart3"></i></span>
+            </article>
+            <article class="stat-card">
+                <div class="stat-copy">
+                    <p class="stat-label">Total Purchases</p>
+                    <h2 class="stat-value">@Model.TotalPurchasesAmount.ToString("C0")</h2>
+                    <div class="stat-trend up"><i class="bi bi-arrow-up"></i> @Model.TotalPurchasesCount <span class="muted">transactions</span></div>
+                </div>
+                <span class="stat-icon icon-purple"><i class="bi bi-bag-check"></i></span>
+            </article>
+            <article class="stat-card">
+                <div class="stat-copy">
+                    <p class="stat-label">Low Stock Items</p>
+                    <h2 class="stat-value">@Model.LowStockProductsCount.ToString("N0")</h2>
+                    <div class="stat-trend down"><i class="bi bi-arrow-up"></i> @lowStockPercent.ToString("0.#")% <span class="muted">of products</span></div>
+                </div>
+                <span class="stat-icon icon-orange"><i class="bi bi-exclamation-triangle"></i></span>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel chart-panel">
+                <div class="panel-head">
+                    <div>
+                        <h3 class="panel-title">Sales Overview</h3>
+                        <p class="panel-subtitle">Visual snapshot of your current sales performance</p>
+                    </div>
+                    <div class="legend"><span><i></i>This Year</span><span class="last"><i></i>Reference</span></div>
+                </div>
+                <div class="fake-chart" aria-hidden="true">
+                    <div class="chart-y"><span>25k</span><span>20k</span><span>15k</span><span>10k</span><span>5k</span><span>0</span></div>
+                    <div class="chart-column"><div class="chart-bars"><span class="bar primary" style="height: 35%"></span><span class="bar" style="height: 24%"></span></div><span class="chart-month">Jan</span></div>
+                    <div class="chart-column"><div class="chart-bars"><span class="bar primary" style="height: 46%"></span><span class="bar" style="height: 31%"></span></div><span class="chart-month">Feb</span></div>
+                    <div class="chart-column"><div class="chart-bars"><span class="bar primary" style="height: 52%"></span><span class="bar" style="height: 39%"></span></div><span class="chart-month">Mar</span></div>
+                    <div class="chart-column"><div class="chart-bars"><span class="bar primary" style="height: 61%"></span><span class="bar" style="height: 50%"></span></div><span class="chart-month">Apr</span></div>
+                    <div class="chart-column"><div class="chart-bars"><span class="bar primary" style="height: 71%"></span><span class="bar" style="height: 59%"></span></div><span class="chart-month">May</span></div>
+                    <div class="chart-column"><div class="chart-bars"><span class="bar primary" style="height: 77%"></span><span class="bar" style="height: 68%"></span></div><span class="chart-month">Jun</span></div>
+                    <div class="chart-column"><div class="chart-bars"><span class="bar primary" style="height: 83%"></span><span class="bar" style="height: 74%"></span></div><span class="chart-month">Jul</span></div>
+                    <div class="chart-column"><div class="chart-bars"><span class="bar primary" style="height: 92%"></span><span class="bar" style="height: 84%"></span></div><span class="chart-month">Aug</span></div>
+                </div>
+            </article>
+
+            <article class="panel stock-card">
+                <div class="panel-head">
+                    <div>
+                        <h3 class="panel-title"><i class="bi bi-box-seam me-1"></i> Stock Status</h3>
+                        <p class="panel-subtitle">Current inventory breakdown</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card stat-card">
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <div>
-                            <p class="stat-label">Categories</p>
-                            <h2 class="stat-value">@Model.TotalCategories</h2>
-                        </div>
-                        <div class="stat-icon icon-purple">
-                            <i class="bi bi-grid-1x2"></i>
-                        </div>
+                <div class="stock-body">
+                    <div class="donut" style="--in-stock:@inStockPercent.ToString("0.##")%; --low-stock:@lowStockPercent.ToString("0.##")%;">
+                        <div class="donut-center"><strong>@Model.TotalProducts.ToString("N0")</strong><span>Total Products</span></div>
+                    </div>
+                    <div class="stock-list">
+                        <div class="stock-item"><span class="stock-dot"></span><div><div class="stock-name">In Stock</div><div class="stock-value">@inStockCount.ToString("N0") (@inStockPercent.ToString("0.#")%)</div></div></div>
+                        <div class="stock-item"><span class="stock-dot orange"></span><div><div class="stock-name">Low Stock</div><div class="stock-value">@lowStockCount.ToString("N0") (@lowStockPercent.ToString("0.#")%)</div></div></div>
+                        <div class="stock-item"><span class="stock-dot red"></span><div><div class="stock-name">Out of Stock</div><div class="stock-value">@outOfStockCount.ToString("N0") (@outOfStockPercent.ToString("0.#")%)</div></div></div>
                     </div>
                 </div>
-            </div>
+            </article>
+        </section>
 
-            <div class="col-sm-6 col-lg-3">
-                <div class="card stat-card">
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <div>
-                            <p class="stat-label">Suppliers</p>
-                            <h2 class="stat-value">@Model.TotalSuppliers</h2>
-                        </div>
-                        <div class="stat-icon icon-orange">
-                            <i class="bi bi-truck"></i>
-                        </div>
-                    </div>
+        <section class="lower-grid">
+            <article class="panel">
+                <div class="panel-head">
+                    <div><h3 class="panel-title">Recent Activities</h3><p class="panel-subtitle">Latest transactions and updates</p></div>
+                    <span class="view-link">View All</span>
                 </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card stat-card">
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <div>
-                            <p class="stat-label">Items in Stock</p>
-                            <h2 class="stat-value">@Model.TotalStockQuantity</h2>
-                        </div>
-                        <div class="stat-icon icon-cyan">
-                            <i class="bi bi-boxes"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row g-4 mb-4">
-            <div class="col-md-4">
-                <div class="card stat-card">
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <div>
-                            <p class="stat-label">Low-Stock Alerts</p>
-                            <h2 class="stat-value text-danger">@Model.LowStockProductsCount</h2>
-                        </div>
-                        <div class="stat-icon icon-red">
-                            <i class="bi bi-exclamation-triangle"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card summary-card purchase-card">
-                    <div class="card-body">
-                        <p class="summary-title">
-                            <i class="bi bi-cart-plus me-2"></i>Total Purchases
-                        </p>
-                        <h2 class="summary-value">@Model.TotalPurchasesAmount.ToString("C")</h2>
-                        <p class="summary-note">@Model.TotalPurchasesCount purchase transaction(s)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card summary-card sales-card">
-                    <div class="card-body">
-                        <p class="summary-title">
-                            <i class="bi bi-graph-up-arrow me-2"></i>Total Sales Revenue
-                        </p>
-                        <h2 class="summary-value">@Model.TotalSalesRevenue.ToString("C")</h2>
-                        <p class="summary-note">@Model.TotalSalesCount sale transaction(s)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-lg-6">
-                <div class="card dashboard-panel">
-                    <div class="card-header">
-                        <h5 class="panel-title">Recent Activity</h5>
-                        <p class="panel-subtitle">Latest sales and stock purchases</p>
-                    </div>
-
-                    <div class="card-body">
-                        @if (Model.RecentActivities.Any())
+                <div class="activity-list">
+                    @if (recent.Any())
+                    {
+                        foreach (var activity in recent)
                         {
-                            <div class="table-responsive">
-                                <table class="table table-hover dashboard-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Type</th>
-                                            <th>Details</th>
-                                            <th>Date</th>
-                                            <th class="text-end">Amount</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var activity in Model.RecentActivities)
-                                        {
-                                            <tr>
-                                                <td>
-                                                    @if (activity.Type == "Sale")
-                                                    {
-                                                        <span class="badge bg-success activity-badge">
-                                                            <i class="bi bi-arrow-up-right me-1"></i>Sale
-                                                        </span>
-                                                    }
-                                                    else
-                                                    {
-                                                        <span class="badge bg-primary activity-badge">
-                                                            <i class="bi bi-arrow-down-left me-1"></i>Purchase
-                                                        </span>
-                                                    }
-                                                </td>
-                                                <td>@activity.Details</td>
-                                                <td>@activity.Date.ToLocalTime().ToString("dd MMM yyyy")</td>
-                                                <td class="text-end fw-semibold">@activity.Amount.ToString("C")</td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
+                            var isSale = activity.Type == "Sale";
+                            <div class="activity-row">
+                                <span class="activity-icon @(isSale ? "icon-green" : "icon-blue")"><i class="bi @(isSale ? "bi-cart3" : "bi-truck")"></i></span>
+                                <div>
+                                    <div class="activity-title">@(isSale ? "New sale" : "Purchase received")</div>
+                                    <div class="activity-sub">@activity.Details</div>
+                                </div>
+                                <div class="activity-meta"><div class="activity-date">@activity.Date.ToLocalTime().ToString("dd MMM yyyy")</div><div class="activity-amount">@activity.Amount.ToString("C0")</div><span class="activity-badge @(isSale ? "sale" : "purchase")">@(isSale ? "Completed" : "Received")</span></div>
                             </div>
                         }
-                        else
-                        {
-                            <p class="empty-state">
-                                <i class="bi bi-clock-history"></i>
-                                No recent sales or purchases found.
-                            </p>
-                        }
-                    </div>
+                    }
+                    else
+                    {
+                        <p class="empty-state">No recent sales or purchases found.</p>
+                    }
                 </div>
-            </div>
+            </article>
 
-            <div class="col-lg-6">
-                <div class="card dashboard-panel">
-                    <div class="card-header">
-                        <h5 class="panel-title">Most Sold Products</h5>
-                        <p class="panel-subtitle">Top products ranked by quantity sold</p>
-                    </div>
+            <article class="panel">
+                <div class="panel-head"><div><h3 class="panel-title">Latest Orders</h3><p class="panel-subtitle">Most recent customer and supplier transactions</p></div><span class="view-link">View All</span></div>
+                <div class="table-wrap">
+                    <table class="order-table">
+                        <thead><tr><th>Order / Txn</th><th>Details</th><th>Status</th><th class="text-end">Total</th></tr></thead>
+                        <tbody>
+                            @if (recent.Any())
+                            {
+                                var idx = 123;
+                                foreach (var activity in recent)
+                                {
+                                    var isSale = activity.Type == "Sale";
+                                    <tr>
+                                        <td>#@(idx++)</td>
+                                        <td>@activity.Details</td>
+                                        <td><span class="status-pill @(isSale ? "completed" : "shipped")">@(isSale ? "Completed" : "Received")</span></td>
+                                        <td class="text-end fw-semibold">@activity.Amount.ToString("C0")</td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr><td colspan="4" class="text-center py-4 text-muted">No transaction data yet.</td></tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </article>
 
-                    <div class="card-body">
-                        @if (Model.MostSoldProducts.Any())
+            <div class="quick-col">
+                <article class="panel quick-actions">
+                    <div class="panel-head p-0 mb-3"><div><h3 class="panel-title">Quick Actions</h3></div></div>
+                    <a class="quick-btn quick-blue" asp-controller="Products" asp-action="Add"><i class="bi bi-plus-lg"></i>Add New Product</a>
+                    <a class="quick-btn quick-green" asp-controller="Purchase" asp-action="Create"><i class="bi bi-cart-plus"></i>Add Purchase</a>
+                    <a class="quick-btn quick-purple" asp-controller="Sale" asp-action="Create"><i class="bi bi-tag"></i>Add Sale</a>
+                    <a class="quick-btn quick-slate" asp-controller="Inventory" asp-action="Index"><i class="bi bi-bar-chart"></i>View Inventory</a>
+                </article>
+
+                <article class="panel top-products">
+                    <div class="panel-head px-0"><div><h3 class="panel-title">Top Selling Products</h3><p class="panel-subtitle">Ranked by quantity sold</p></div><i class="bi bi-trophy-fill text-warning"></i></div>
+                    @if (salesProducts.Any())
+                    {
+                        foreach (var product in salesProducts)
                         {
-                            <div class="table-responsive">
-                                <table class="table table-hover dashboard-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Product</th>
-                                            <th class="text-center">Quantity Sold</th>
-                                            <th class="text-end">Revenue</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var product in Model.MostSoldProducts)
-                                        {
-                                            <tr>
-                                                <td class="fw-semibold">@product.ProductName</td>
-                                                <td class="text-center">
-                                                    <span class="badge text-bg-light">@product.TotalQuantitySold</span>
-                                                </td>
-                                                <td class="text-end fw-semibold text-success">@product.TotalRevenue.ToString("C")</td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
+                            <div class="product-row">
+                                <span class="product-thumb"><i class="bi bi-box-seam"></i></span>
+                                <div><div class="product-name">@product.ProductName</div><div class="product-sold">@product.TotalQuantitySold.ToString("N0") sold</div></div>
+                                <div class="product-revenue">@product.TotalRevenue.ToString("C0")</div>
                             </div>
                         }
-                        else
-                        {
-                            <p class="empty-state">
-                                <i class="bi bi-bar-chart"></i>
-                                No sales data found yet.
-                            </p>
-                        }
-                    </div>
-                </div>
+                    }
+                    else
+                    {
+                        <p class="empty-state">No sales data found yet.</p>
+                    }
+                </article>
             </div>
-        </div>
-        <div class="row g-4 mt-2 mb-4">
-            <div class="col-12">
-                <div class="card dashboard-panel" style="border-left: 4px solid #7c3aed;">
-                    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
-                        <div>
-                            <h5 class="panel-title">
-                                <i class="bi bi-robot me-2 text-purple" style="color: #7c3aed;"></i>
-                                AI Inventory Analysis
-                            </h5>
-                            <p class="panel-subtitle">Get smart, real-time recommendations for your stock</p>
-                        </div>
-                        <button type="button" class="btn text-white shadow-sm" style="background-color: #7c3aed;" data-bs-toggle="modal" data-bs-target="#aiAnalysisModal">
-                            <i class="bi bi-magic me-1"></i> Smart Analysis
-                        </button>
-                    </div>
-                </div>
+        </section>
+
+        <section class="panel ai-card">
+            <div class="panel-head">
+                <div class="ai-heading-wrap"><i class="bi bi-robot ai-heading-icon"></i><div><h3 class="panel-title">AI Inventory Analysis</h3><p class="panel-subtitle">Get smart, real-time recommendations for your stock</p></div></div>
+                <button type="button" class="ai-action" data-bs-toggle="modal" data-bs-target="#aiAnalysisModal"><i class="bi bi-stars me-1"></i>Smart Analysis</button>
             </div>
-        </div>
+        </section>
     </div>
 </div>
+
 <!-- AI Analysis Modal -->
 <div class="modal fade" id="aiAnalysisModal" tabindex="-1" aria-labelledby="aiAnalysisModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">

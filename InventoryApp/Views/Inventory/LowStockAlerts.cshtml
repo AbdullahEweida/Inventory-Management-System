@@ -1,4 +1,4 @@
-﻿@model IEnumerable<InventoryApp.Models.Product>
+@model IEnumerable<InventoryApp.Models.Product>
 
 @{
     ViewData["Title"] = "Low Stock Alerts";
@@ -66,14 +66,12 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent border-0 pb-3 text-center">
-                            <button class="btn btn-sm rounded-pill px-4">
-                                <a asp-controller="Purchase"
-                                   asp-action="OrderProduct"
-                                   asp-route-productId="@item.ID"
-                                   class="btn btn-warning rounded-pill">
-                                    Order Now
-                                </a>
-                            </button>
+                            <a asp-controller="Purchase"
+                               asp-action="OrderProduct"
+                               asp-route-productId="@item.ID"
+                               class="btn btn-warning rounded-pill px-4">
+                                Order Now
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using Microsoft.EntityFrameworkCore;
 namespace InventoryApp.Models
 {
+    [Index(nameof(Name), IsUnique =true)]
+    [Index(nameof(SKU), IsUnique = true)]
     public class Product
     {
         [Key]
@@ -24,7 +26,7 @@ namespace InventoryApp.Models
 
         // navigation properties
         public Category? Category { get; set; }
-        public List<Sale_Item> Sale_Items { get; set; }
-        public List<Purchase_Item> Purchase_Items { get; set; }
+        public List<Sale_Item> Sale_Items { get; set; } = new();
+        public List<Purchase_Item> Purchase_Items { get; set; } = new();
     }
 }
